@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học JavaScript cơ bản: Từ số không đến viết hàm đầu tiên</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(45deg, #17a2b8, #63c2de);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .description {
+            font-size: 1.25rem;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .code-block {
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background: #343a40;
+            color: white;
+        }
+
+        footer a {
+            color: #17a2b8;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Học JavaScript cơ bản: Từ số không đến viết hàm đầu tiên</h1>
+        <p class="description">Khám phá các khái niệm cơ bản như biến, vòng lặp và cách viết hàm đầu tiên trong JavaScript!</p>
+    </header>
+
+    <div class="content">
+        <h2>1. Khái niệm cơ bản trong JavaScript</h2>
+        <p>JavaScript là ngôn ngữ lập trình phổ biến được sử dụng để phát triển web. Dưới đây là một số khái niệm cơ bản bạn cần hiểu khi bắt đầu học JavaScript:</p>
+        
+        <h3>Biến (Variables)</h3>
+        <p>Biến trong JavaScript là nơi bạn lưu trữ giá trị. Để khai báo một biến, bạn có thể sử dụng các từ khóa như <code>var</code>, <code>let</code>, hoặc <code>const</code>. Ví dụ:</p>
+        <pre><code>let x = 10;</code></pre>
+        <p>Biến <code>x</code> sẽ lưu trữ giá trị 10 trong ví dụ trên.</p>
+
+        <h3>Vòng lặp (Loops)</h3>
+        <p>Vòng lặp trong JavaScript giúp bạn lặp lại một đoạn mã nhiều lần. Ví dụ sử dụng vòng lặp <code>for</code>:</p>
+        <pre><code>for (let i = 0; i < 5; i++) {
+    console.log(i);
+}</code></pre>
+        <p>Đoạn mã trên sẽ in ra các số từ 0 đến 4.</p>
+
+        <h3>Hàm (Functions)</h3>
+        <p>Hàm là một khối mã có thể tái sử dụng để thực hiện một công việc cụ thể. Bạn có thể khai báo hàm như sau:</p>
+        <pre><code>function sum(a, b) {
+    return a + b;
+}</code></pre>
+        <p>Hàm <code>sum</code> nhận hai tham số <code>a</code> và <code>b</code>, sau đó trả về tổng của chúng.</p>
+
+        <h2>2. Ví dụ về hàm tính tổng</h2>
+        <p>Để hiểu rõ hơn về cách viết hàm trong JavaScript, hãy thử ví dụ sau:</p>
+        <pre><code>function sum(a, b) {
+    return a + b;
+}
+
+console.log(sum(5, 10)); // Kết quả: 15</code></pre>
+        <p>Trong ví dụ trên, hàm <code>sum</code> sẽ nhận hai số 5 và 10, sau đó trả về tổng là 15. Dòng lệnh <code>console.log(sum(5, 10));</code> sẽ in ra kết quả này trên bảng điều khiển (console).</p>
+
+        <h2>3. Kết luận</h2>
+        <p>JavaScript là một ngôn ngữ lập trình mạnh mẽ và dễ học. Bằng cách hiểu rõ các khái niệm cơ bản như biến, vòng lặp và hàm, bạn sẽ có nền tảng vững chắc để phát triển các ứng dụng web. Hãy tiếp tục luyện tập và khám phá thêm nhiều tính năng mạnh mẽ của JavaScript!</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 JavaScript Tutorials | Made with <a href="#">passion</a>.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

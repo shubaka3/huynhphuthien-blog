@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Làm việc với file trong Java</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(45deg, #4caf50, #81c784);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .description {
+            font-size: 1.25rem;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .code-block {
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background: #343a40;
+            color: white;
+        }
+
+        footer a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Làm việc với file trong Java</h1>
+        <p class="description">Tìm hiểu cách đọc và ghi file trong Java.</p>
+    </header>
+
+    <div class="content">
+        <h2>1. Giới thiệu về làm việc với file trong Java</h2>
+        <p>
+            Java cung cấp các lớp trong thư viện java.io để xử lý việc đọc và ghi dữ liệu vào các file. Việc làm việc với file là một phần quan trọng trong lập trình vì nó giúp lưu trữ và quản lý dữ liệu lâu dài.
+        </p>
+
+        <h2>2. Cách ghi dữ liệu vào file</h2>
+        <p>
+            Để ghi dữ liệu vào file trong Java, bạn có thể sử dụng lớp <code>FileWriter</code>. Dưới đây là ví dụ về cách ghi chuỗi vào một file:
+        </p>
+
+        <div class="code-block">
+            <h4>Mã nguồn ghi dữ liệu vào file:</h4>
+            <pre><code>import java.io.*;
+
+public class FileExample {
+    public static void main(String[] args) {
+        try {
+            FileWriter writer = new FileWriter("example.txt");
+            writer.write("Hello, File!");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+        </div>
+
+        <h2>3. Cách đọc dữ liệu từ file</h2>
+        <p>
+            Để đọc dữ liệu từ file trong Java, bạn có thể sử dụng lớp <code>FileReader</code>. Dưới đây là ví dụ về cách đọc dữ liệu từ một file:
+        </p>
+
+        <div class="code-block">
+            <h4>Mã nguồn đọc dữ liệu từ file:</h4>
+            <pre><code>import java.io.*;
+
+public class FileExample {
+    public static void main(String[] args) {
+        try {
+            FileReader reader = new FileReader("example.txt");
+            int ch;
+            while ((ch = reader.read()) != -1) {
+                System.out.print((char) ch);
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+        </div>
+
+        <h2>4. Giải thích mã nguồn</h2>
+        <p>
+            Mã nguồn trên thực hiện hai thao tác cơ bản:
+        </p>
+        <ul>
+            <li><strong>FileWriter:</strong> Sử dụng để ghi dữ liệu vào file. Nếu file không tồn tại, Java sẽ tạo mới file đó.</li>
+            <li><strong>FileReader:</strong> Dùng để đọc dữ liệu từ file. Chúng ta đọc từng ký tự trong file cho đến khi hết nội dung.</li>
+        </ul>
+
+        <h2>5. Kết luận</h2>
+        <p>
+            Làm việc với file trong Java khá đơn giản nhờ vào các lớp tiện ích như <code>FileWriter</code> và <code>FileReader</code>. Bạn có thể áp dụng các lớp này để thực hiện các thao tác đọc và ghi file trong các ứng dụng Java của mình.
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Java Tutorials | Made with <a href="#">passion</a>.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

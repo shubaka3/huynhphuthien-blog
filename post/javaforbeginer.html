@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn cơ bản về lập trình Java cho người mới bắt đầu</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(45deg, #4caf50, #81c784);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .description {
+            font-size: 1.25rem;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .code-block {
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background: #343a40;
+            color: white;
+        }
+
+        footer a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hướng dẫn cơ bản về lập trình Java cho người mới bắt đầu</h1>
+        <p class="description">Tìm hiểu ngôn ngữ lập trình phổ biến nhất thế giới!</p>
+    </header>
+
+    <div class="content">
+        <h2>1. Giới thiệu ngôn ngữ Java</h2>
+        <p>
+            Java là một ngôn ngữ lập trình mạnh mẽ và phổ biến, được phát triển bởi Sun Microsystems vào năm 1995 và hiện thuộc sở hữu của Oracle. 
+            Với khẩu hiệu "Write Once, Run Anywhere", Java cho phép chạy trên mọi nền tảng mà không cần chỉnh sửa mã nguồn.
+        </p>
+        <img src="https://example.com/java-intro.jpg" alt="Biểu tượng Java">
+
+        <h2>2. Cách cài đặt môi trường lập trình</h2>
+        <p>
+            Để bắt đầu lập trình Java, bạn cần chuẩn bị môi trường lập trình:
+        </p>
+        <ul>
+            <li><strong>JDK (Java Development Kit):</strong> Bộ công cụ để biên dịch và chạy mã Java.</li>
+            <li><strong>IntelliJ IDEA hoặc Eclipse:</strong> Công cụ hỗ trợ lập trình hiệu quả.</li>
+        </ul>
+        <p>Hướng dẫn chi tiết:</p>
+        <ol>
+            <li>Tải JDK từ trang chủ Oracle: <a href="https://www.oracle.com/java/technologies/javase-downloads.html" target="_blank">Tải JDK</a>.</li>
+            <li>Cài đặt JDK và thiết lập biến môi trường <code>JAVA_HOME</code>.</li>
+            <li>Tải và cài đặt IntelliJ IDEA hoặc Eclipse.</li>
+        </ol>
+        <img src="https://example.com/installation-guide.jpg" alt="Hướng dẫn cài đặt Java">
+
+        <h2>3. Viết chương trình Java đầu tiên</h2>
+        <p>Chúng ta sẽ viết chương trình <strong>Hello World</strong> - chương trình cơ bản nhất trong mọi ngôn ngữ lập trình.</p>
+
+        <div class="code-block">
+            <h4>Mã nguồn:</h4>
+            <pre><code>public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</code></pre>
+        </div>
+
+        <h2>4. Giải thích mã nguồn</h2>
+        <p>
+            Đây là các thành phần cơ bản trong chương trình:
+        </p>
+        <ul>
+            <li><strong>public class HelloWorld:</strong> Tạo một lớp có tên HelloWorld.</li>
+            <li><strong>public static void main:</strong> Phương thức chính - điểm khởi đầu của chương trình.</li>
+            <li><strong>System.out.println:</strong> Dùng để in chuỗi ra màn hình.
+        </ul>
+
+        <h2>5. Kết luận</h2>
+        <p>
+            Java là một ngôn ngữ lập trình mạnh mẽ và dễ học. Với chương trình Hello World đầu tiên, bạn đã sẵn sàng bước vào thế giới lập trình Java.
+            Hãy tiếp tục khám phá thêm nhiều tính năng thú vị khác!
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Java Tutorials | Made with <a href="#">passion</a>.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

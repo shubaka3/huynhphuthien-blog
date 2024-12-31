@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation: Làm quen với lập trình giao diện</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(45deg, #007bff, #5bc0de);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .description {
+            font-size: 1.25rem;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .code-block {
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background: #343a40;
+            color: white;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DOM Manipulation: Làm quen với lập trình giao diện</h1>
+        <p class="description">Khám phá cách sử dụng JavaScript để thay đổi nội dung và tương tác với trang web của bạn!</p>
+    </header>
+
+    <div class="content">
+        <h2>1. Giới thiệu về DOM Manipulation</h2>
+        <p>DOM (Document Object Model) là một API (Application Programming Interface) cho phép JavaScript tương tác và thay đổi nội dung của trang web. Với DOM, bạn có thể thay đổi văn bản, thay đổi cấu trúc HTML, hoặc thay đổi các thuộc tính của phần tử trang web.</p>
+        
+        <h3>Thay đổi nội dung trang web bằng JavaScript</h3>
+        <p>JavaScript cung cấp các phương thức để thay đổi nội dung của các phần tử HTML trên trang web. Bạn có thể sử dụng <code>document.getElementById()</code> để lấy phần tử HTML và sau đó thay đổi thuộc tính của nó, như thay đổi văn bản hoặc giá trị của thuộc tính.</p>
+
+        <h2>2. Ví dụ về thay đổi nội dung HTML</h2>
+        <p>Ví dụ dưới đây cho thấy cách thay đổi nội dung của một phần tử HTML khi người dùng nhấn vào một nút:</p>
+        
+        <div class="code-block">
+            <h4>Mã HTML:</h4>
+            <pre><code>&lt;button id="myButton"&gt;Click me&lt;/button&gt;
+&lt;p id="output"&gt;&lt;/p&gt;</code></pre>
+        </div>
+
+        <div class="code-block">
+            <h4>Mã JavaScript:</h4>
+            <pre><code>document.getElementById("myButton").addEventListener("click", function() {
+    document.getElementById("output").innerText = "Button clicked!";
+});</code></pre>
+        </div>
+
+        <p>Trong ví dụ trên, khi người dùng nhấn vào nút có ID <code>myButton</code>, nội dung của phần tử <code>output</code> sẽ thay đổi thành "Button clicked!".</p>
+
+        <h2>3. Kết luận</h2>
+        <p>DOM Manipulation là một kỹ năng quan trọng khi làm việc với JavaScript để thay đổi nội dung và giao diện của trang web. Bạn có thể sử dụng các phương thức như <code>getElementById</code>, <code>getElementsByClassName</code>, <code>querySelector</code>, v.v., để tương tác với các phần tử trong DOM. Hãy tiếp tục khám phá và thử nghiệm với các tính năng của JavaScript để làm phong phú trang web của bạn!</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 JavaScript Tutorials | Made with <a href="#">passion</a>.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

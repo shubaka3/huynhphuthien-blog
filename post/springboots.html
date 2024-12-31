@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Boot: Làm ứng dụng web cơ bản</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .description {
+            font-size: 1.25rem;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .code-block {
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background: #343a40;
+            color: white;
+        }
+
+        footer a {
+            color: #20c997;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Spring Boot: Làm ứng dụng web cơ bản</h1>
+        <p class="description">Hướng dẫn tạo REST API đơn giản với Spring Boot</p>
+    </header>
+
+    <div class="content">
+        <h2>Giới thiệu Spring Boot</h2>
+        <p>
+            Spring Boot là một framework mạnh mẽ giúp xây dựng các ứng dụng web và REST API nhanh chóng với cấu hình tối thiểu. 
+            Với Spring Boot, bạn có thể tập trung vào logic của ứng dụng mà không phải lo lắng quá nhiều về cấu hình chi tiết.
+        </p>
+
+        <h2>Cách tạo REST API đơn giản</h2>
+        <p>
+            Một REST API cơ bản trong Spring Boot chỉ cần vài bước đơn giản:
+            <ol>
+                <li>Khởi tạo một project Spring Boot.</li>
+                <li>Thêm các dependencies cần thiết (Spring Web).</li>
+                <li>Viết controller để xử lý các yêu cầu HTTP.</li>
+            </ol>
+        </p>
+
+        <div class="code-block">
+            <h4>Ví dụ Code:</h4>
+            <pre><code>@RestController
+public class HelloController {
+    @GetMapping("/hello")
+    public String sayHello() {
+        return "Hello, Spring Boot!";
+    }
+}</code></pre>
+        </div>
+
+        <h2>Hướng dẫn thực hiện</h2>
+        <p>
+            Thực hiện các bước sau để tạo ứng dụng REST API đơn giản:
+        </p>
+        <h3>1. Khởi tạo dự án</h3>
+        <p>
+            Truy cập trang <a href="https://start.spring.io" target="_blank">Spring Initializr</a> và tạo một dự án với các thông tin sau:
+            <ul>
+                <li>Project: Maven</li>
+                <li>Language: Java</li>
+                <li>Spring Boot Version: 3.x.x</li>
+                <li>Dependencies: Spring Web</li>
+            </ul>
+        </p>
+
+        <h3>2. Cấu trúc dự án</h3>
+        <p>
+            Sau khi tải xuống, giải nén và mở dự án trong IDE yêu thích (IntelliJ, Eclipse). 
+            Thêm class <code>HelloController</code> trong package chính để định nghĩa REST API.
+        </p>
+
+        <h3>3. Chạy ứng dụng</h3>
+        <p>
+            Chạy file <code>Application.java</code>. Sau khi khởi động thành công, mở trình duyệt và truy cập URL <code>http://localhost:8080/hello</code>. Bạn sẽ thấy kết quả:
+        </p>
+        <pre><code>Hello, Spring Boot!</code></pre>
+
+        <h2>Kết luận</h2>
+        <p>
+            Spring Boot giúp việc phát triển các ứng dụng web và REST API trở nên đơn giản hơn bao giờ hết. Với các tính năng mạnh mẽ và linh hoạt, 
+            đây là một công cụ không thể thiếu cho các lập trình viên Java hiện đại.
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Spring Boot Tutorials | Designed with <a href="#">passion</a>.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

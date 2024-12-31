@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP trong Java: Học qua ví dụ thực tế</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(45deg, #007bff, #6610f2);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .description {
+            font-size: 1.25rem;
+            color: #d1d1d1;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .code-block {
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background: #343a40;
+            color: white;
+        }
+
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OOP trong Java: Học qua ví dụ thực tế</h1>
+        <p class="description">Hiểu về Lập trình Hướng đối tượng thông qua các ví dụ dễ hiểu</p>
+    </header>
+
+    <div class="content">
+        <h2>Giới thiệu về OOP</h2>
+        <p>
+            Lập trình Hướng đối tượng (Object-Oriented Programming - OOP) là một phương pháp lập trình dựa trên khái niệm "đối tượng", 
+            trong đó mỗi đối tượng có thuộc tính (dữ liệu) và phương thức (hành vi).
+        </p>
+
+        <h2>Các khái niệm chính trong OOP</h2>
+        <ul>
+            <li><strong>Class:</strong> Là bản thiết kế hoặc khuôn mẫu cho các đối tượng.</li>
+            <li><strong>Object:</strong> Là một thể hiện của class.</li>
+            <li><strong>Inheritance:</strong> Là tính kế thừa, cho phép một class sử dụng lại các thuộc tính và phương thức của class khác.</li>
+            <li><strong>Polymorphism:</strong> Là tính đa hình, cho phép cùng một phương thức có thể có các cách thực hiện khác nhau.</li>
+        </ul>
+
+        <h2>Ví dụ: Quản lý sinh viên sử dụng OOP</h2>
+        <div class="code-block">
+            <h4>Code:</h4>
+            <pre><code>class Student {
+    String name;
+    int age;
+
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student("John", 20);
+        student.displayInfo();
+    }
+}</code></pre>
+        </div>
+
+        <h2>Phân tích code</h2>
+        <p>
+            Trong ví dụ trên:
+            <ul>
+                <li><strong>Class Student:</strong> Định nghĩa thuộc tính <code>name</code> và <code>age</code>, cùng với phương thức <code>displayInfo</code>.</li>
+                <li><strong>Constructor:</strong> Khởi tạo đối tượng <code>Student</code> với tên và tuổi.</li>
+                <li><strong>Object:</strong> Đối tượng <code>student</code> được tạo từ class <code>Student</code>.</li>
+            </ul>
+        </p>
+
+        <h2>Ý nghĩa của OOP</h2>
+        <p>
+            OOP giúp lập trình viên quản lý và tổ chức code tốt hơn, đặc biệt trong các dự án lớn. 
+            Nó cũng giúp tái sử dụng code và giảm thiểu lỗi bằng cách áp dụng các nguyên tắc rõ ràng.
+        </p>
+
+        <h2>Kết luận</h2>
+        <p>
+            Lập trình Hướng đối tượng là một phần không thể thiếu khi học Java. 
+            Hãy thực hành các ví dụ thực tế để nắm vững các khái niệm cơ bản và nâng cao kỹ năng lập trình của bạn.
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 OOP Java Guide | Thiết kế với <a href="#">đam mê</a>.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

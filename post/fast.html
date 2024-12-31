@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cách tối ưu hóa hiệu suất ứng dụng Java</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(45deg, #4caf50, #81c784);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .description {
+            font-size: 1.25rem;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .code-block {
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background: #343a40;
+            color: white;
+        }
+
+        footer a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cách tối ưu hóa hiệu suất ứng dụng Java</h1>
+        <p class="description">Tìm hiểu cách cải thiện hiệu suất bộ nhớ và tối ưu hóa mã Java với kỹ thuật lập trình song song!</p>
+    </header>
+
+    <div class="content">
+        <h2>1. Cải thiện hiệu suất bộ nhớ (Memory Optimization)</h2>
+        <p>
+            Tối ưu hóa bộ nhớ là một phần quan trọng trong việc cải thiện hiệu suất của ứng dụng Java. Dưới đây là một số cách giúp giảm thiểu việc sử dụng bộ nhớ và làm cho ứng dụng Java của bạn chạy nhanh hơn:
+        </p>
+        <ul>
+            <li><strong>Giảm số lượng đối tượng tạo ra:</strong> Tránh việc tạo quá nhiều đối tượng không cần thiết. Sử dụng các đối tượng duy nhất hoặc các đối tượng tạm thời khi cần thiết.</li>
+            <li><strong>Reusing Objects:</strong> Tái sử dụng các đối tượng khi có thể thay vì tạo ra các đối tượng mới mỗi khi cần.</li>
+            <li><strong>Garbage Collection (GC):</strong> Thực hiện tối ưu hóa Garbage Collection để loại bỏ những đối tượng không còn sử dụng.</li>
+            <li><strong>Nhúng đối tượng và sử dụng kiểu dữ liệu primitive:</strong> Thay vì sử dụng các lớp wrapper, hãy sử dụng các kiểu dữ liệu primitive như <code>int</code>, <code>char</code>, <code>double</code> khi có thể.</li>
+        </ul>
+
+        <h3>Ví dụ về tối ưu hóa bộ nhớ:</h3>
+        <p>
+            Dưới đây là ví dụ về việc tái sử dụng đối tượng thay vì tạo mới mỗi lần.
+        </p>
+        <div class="code-block">
+            <h4>Mã nguồn:</h4>
+            <pre><code>class ObjectPooling {
+    private static final List<String> pool = new ArrayList<>();
+
+    public static String getObject() {
+        if (pool.isEmpty()) {
+            return "New Object";
+        }
+        return pool.remove(pool.size() - 1);
+    }
+
+    public static void returnObject(String obj) {
+        pool.add(obj);
+    }
+
+    public static void main(String[] args) {
+        String object1 = getObject();
+        System.out.println(object1);  // Output: New Object
+
+        returnObject(object1);
+
+        String object2 = getObject();
+        System.out.println(object2);  // Output: New Object (reuse)
+    }
+}</code></pre>
+        </div>
+
+        <h2>2. Viết mã song song với Threads</h2>
+        <p>
+            Sử dụng đa luồng (multithreading) là một cách mạnh mẽ để cải thiện hiệu suất của ứng dụng Java, đặc biệt là đối với các tác vụ nặng hoặc yêu cầu tính toán cao. Java cung cấp các API để tạo và quản lý các thread, cho phép xử lý song song.
+        </p>
+        <h3>2.1. Sử dụng ExecutorService</h3>
+        <p>
+            Thay vì tạo thread trực tiếp, bạn có thể sử dụng <code>ExecutorService</code> để quản lý các thread và tối ưu hóa việc sử dụng tài nguyên hệ thống.
+        </p>
+        <div class="code-block">
+            <h4>Mã nguồn:</h4>
+            <pre><code>import java.util.concurrent.*;
+
+public class ThreadExample {
+    public static void main(String[] args) {
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+
+        executorService.submit(() -> {
+            System.out.println("Task 1 is running");
+        });
+
+        executorService.submit(() -> {
+            System.out.println("Task 2 is running");
+        });
+
+        executorService.shutdown();
+    }
+}</code></pre>
+        </div>
+
+        <p>
+            Trong ví dụ trên, chúng ta đã tạo một <code>ExecutorService</code> với hai thread để chạy hai tác vụ song song. Điều này giúp tối ưu hóa tài nguyên hệ thống và cải thiện hiệu suất khi thực hiện nhiều tác vụ cùng một lúc.
+        </p>
+
+        <h3>2.2. Sử dụng Parallel Streams</h3>
+        <p>
+            Java Streams API cũng hỗ trợ xử lý song song với <code>parallelStream</code>. Điều này giúp xử lý các tập dữ liệu lớn một cách nhanh chóng mà không cần phải quản lý thread trực tiếp.
+        </p>
+        <div class="code-block">
+            <h4>Mã nguồn:</h4>
+            <pre><code>import java.util.*;
+import java.util.stream.*;
+
+public class ParallelStreamExample {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+        int sum = numbers.parallelStream()
+                         .mapToInt(Integer::intValue)
+                         .sum();
+
+        System.out.println("Sum: " + sum);
+    }
+}</code></pre>
+        </div>
+
+        <p>
+            Dùng <code>parallelStream</code>, dữ liệu trong danh sách sẽ được xử lý song song, giúp giảm thời gian xử lý tổng thể.
+        </p>
+
+        <h2>3. Kết luận</h2>
+        <p>
+            Tối ưu hóa hiệu suất là một phần quan trọng của việc phát triển ứng dụng Java, đặc biệt là khi làm việc với các ứng dụng có khối lượng công việc lớn. Bằng cách tối ưu hóa bộ nhớ và tận dụng các kỹ thuật song song, bạn có thể cải thiện đáng kể hiệu suất và khả năng mở rộng của ứng dụng Java.
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Java Tutorials | Made with <a href="#">passion</a>.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

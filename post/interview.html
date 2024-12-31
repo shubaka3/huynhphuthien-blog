@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chia sẻ kinh nghiệm phỏng vấn lập trình viên Java</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(45deg, #4caf50, #81c784);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .description {
+            font-size: 1.25rem;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .code-block {
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background: #343a40;
+            color: white;
+        }
+
+        footer a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chia sẻ kinh nghiệm phỏng vấn lập trình viên Java</h1>
+        <p class="description">Hướng dẫn trả lời các câu hỏi phỏng vấn Java phổ biến và chuẩn bị hồ sơ phỏng vấn hiệu quả!</p>
+    </header>
+
+    <div class="content">
+        <h2>1. Những câu hỏi phỏng vấn phổ biến</h2>
+        <p>Phỏng vấn lập trình viên Java thường sẽ xoay quanh những khái niệm cơ bản, cấu trúc dữ liệu và các công nghệ liên quan đến Java. Dưới đây là một số câu hỏi thường gặp:</p>
+        <ul>
+            <li><strong>Giải thích về Garbage Collection trong Java</strong></li>
+            <li><strong>Sự khác biệt giữa HashMap và Hashtable</strong></li>
+            <li><strong>Java có những kiểu dữ liệu nào và sự khác biệt giữa các kiểu dữ liệu primitive và wrapper?</strong></li>
+            <li><strong>Hãy giải thích về Java Collections Framework</strong></li>
+            <li><strong>Kiểu dữ liệu nào được sử dụng để đồng bộ hóa thread trong Java?</strong></li>
+            <li><strong>Phân biệt giữa lớp abstract và interface trong Java</strong></li>
+            <li><strong>Hãy giải thích về multi-threading trong Java</strong></li>
+        </ul>
+
+        <h2>2. Tips trả lời và chuẩn bị hồ sơ</h2>
+        <p>Để có thể trả lời các câu hỏi phỏng vấn tốt nhất, bạn cần chuẩn bị kỹ lưỡng cả về kiến thức lý thuyết lẫn thực tế. Dưới đây là một số mẹo giúp bạn chuẩn bị phỏng vấn Java hiệu quả:</p>
+        <ul>
+            <li><strong>Đọc kỹ mô tả công việc:</strong> Hiểu rõ các kỹ năng và công nghệ mà nhà tuyển dụng yêu cầu. Điều này giúp bạn chuẩn bị câu trả lời phù hợp hơn.</li>
+            <li><strong>Thực hành coding:</strong> Luyện tập giải quyết các bài toán lập trình để làm quen với các thuật toán, cấu trúc dữ liệu và lập trình tối ưu.</li>
+            <li><strong>Giải thích rõ ràng:</strong> Khi trả lời, hãy giải thích cặn kẽ về logic, cách giải quyết vấn đề thay vì chỉ đưa ra kết quả cuối cùng.</li>
+            <li><strong>Chuẩn bị câu hỏi cho nhà tuyển dụng:</strong> Đặt câu hỏi để thể hiện sự quan tâm đến công ty và dự án mà bạn sẽ tham gia.</li>
+            <li><strong>Chuẩn bị CV chi tiết:</strong> Đảm bảo hồ sơ của bạn rõ ràng và thể hiện những kỹ năng cần thiết mà nhà tuyển dụng yêu cầu.</li>
+        </ul>
+
+        <h2>3. Ví dụ câu hỏi phỏng vấn</h2>
+        <p><strong>Câu hỏi: "Hãy giải thích về Garbage Collection trong Java."</strong></p>
+        <p>Garbage Collection (GC) trong Java là quá trình tự động dọn dẹp bộ nhớ bằng cách giải phóng bộ nhớ của các đối tượng không còn được tham chiếu nữa. Trong Java, bộ thu gom rác (GC) được quản lý bởi Java Virtual Machine (JVM) và không yêu cầu lập trình viên phải quản lý bộ nhớ thủ công. Các bước trong quá trình Garbage Collection thường bao gồm:</p>
+        <ul>
+            <li><strong>Mark:</strong> JVM đánh dấu tất cả các đối tượng mà chương trình còn tham chiếu.</li>
+            <li><strong>Sweep:</strong> Các đối tượng không còn tham chiếu sẽ bị thu hồi.</li>
+            <li><strong>Compact:</strong> Các đối tượng còn lại sẽ được di chuyển để giải phóng không gian bộ nhớ.</li>
+        </ul>
+        <p>Garbage Collection giúp giảm thiểu nguy cơ rò rỉ bộ nhớ và nâng cao hiệu suất của ứng dụng.</p>
+
+        <h3>Ví dụ về Garbage Collection trong mã Java:</h3>
+        <div class="code-block">
+            <h4>Mã nguồn:</h4>
+            <pre><code>public class GarbageCollectionExample {
+    public static void main(String[] args) {
+        // Tạo đối tượng
+        MyObject obj = new MyObject();
+        
+        // Đặt obj = null để không còn tham chiếu
+        obj = null;
+
+        // Gọi GC để kiểm tra việc dọn dẹp bộ nhớ (chỉ gọi khi JVM cần)
+        System.gc();
+    }
+
+    static class MyObject {
+        @Override
+        protected void finalize() {
+            System.out.println("Garbage Collection is called.");
+        }
+    }
+}</code></pre>
+        </div>
+
+        <h2>4. Kết luận</h2>
+        <p>Việc chuẩn bị tốt cho các câu hỏi phỏng vấn Java là rất quan trọng trong quá trình tìm kiếm việc làm. Hãy tập trung vào việc rèn luyện kỹ năng lập trình, học hỏi các khái niệm cốt lõi của Java và chuẩn bị kỹ lưỡng cho hồ sơ của mình để thành công trong phỏng vấn.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Java Tutorials | Made with <a href="#">passion</a>.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

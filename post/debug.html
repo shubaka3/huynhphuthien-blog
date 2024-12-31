@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cách debug chương trình Java hiệu quả</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(45deg, #4caf50, #81c784);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .description {
+            font-size: 1.25rem;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .code-block {
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background: #343a40;
+            color: white;
+        }
+
+        footer a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cách debug chương trình Java hiệu quả</h1>
+        <p class="description">Khám phá các kỹ thuật debug để tìm và sửa lỗi nhanh chóng trong Java!</p>
+    </header>
+
+    <div class="content">
+        <h2>1. Giới thiệu về Debugging trong Java</h2>
+        <p>
+            Debugging là quá trình phát hiện và sửa chữa lỗi trong mã nguồn chương trình. Trong Java, bạn có thể sử dụng các công cụ debug tích hợp sẵn trong các IDE như IntelliJ IDEA và Eclipse để giúp tìm và sửa lỗi hiệu quả hơn.
+        </p>
+
+        <h2>2. Sử dụng Breakpoints trong IntelliJ/Eclipse</h2>
+        <p>
+            Breakpoints cho phép bạn tạm dừng chương trình tại một điểm cụ thể trong mã nguồn để kiểm tra các giá trị của biến và trạng thái của ứng dụng. Dưới đây là cách thiết lập breakpoints trong IntelliJ IDEA và Eclipse:
+        </p>
+
+        <h3>2.1. Thiết lập Breakpoint trong IntelliJ IDEA</h3>
+        <p>
+            Để thiết lập một breakpoint trong IntelliJ IDEA, bạn chỉ cần nhấp chuột vào cạnh trái của dòng mã nơi bạn muốn dừng chương trình. Một dấu chấm đỏ sẽ xuất hiện, biểu thị điểm dừng (breakpoint).
+        </p>
+        <img src="https://example.com/intellij-breakpoint.jpg" alt="Breakpoints trong IntelliJ IDEA">
+
+        <h3>2.2. Thiết lập Breakpoint trong Eclipse</h3>
+        <p>
+            Trong Eclipse, bạn có thể thiết lập breakpoint bằng cách nhấp chuột phải vào dòng mã và chọn <strong>Toggle Breakpoint</strong>. Bạn cũng có thể sử dụng phím tắt <strong>Ctrl + Shift + B</strong>.
+        </p>
+        <img src="https://example.com/eclipse-breakpoint.jpg" alt="Breakpoints trong Eclipse">
+
+        <h2>3. Các Tips và Tricks để Debug hiệu quả</h2>
+        <h3>3.1. Sử dụng Watch Expressions</h3>
+        <p>
+            Watch Expressions cho phép bạn theo dõi giá trị của các biến trong suốt quá trình chạy của chương trình. Bạn có thể thêm các biểu thức để kiểm tra các giá trị mà bạn quan tâm, ngay cả khi chương trình đã tạm dừng tại một breakpoint.
+        </p>
+
+        <h3>3.2. Step Over, Step Into và Step Out</h3>
+        <p>
+            Khi debug, bạn sẽ sử dụng ba lệnh quan trọng: 
+            <ul>
+                <li><strong>Step Over:</strong> Bước qua các dòng mã mà không vào các phương thức gọi.</li>
+                <li><strong>Step Into:</strong> Vào trong các phương thức để kiểm tra chi tiết hơn.</li>
+                <li><strong>Step Out:</strong> Quay lại phương thức gọi sau khi đã debug xong một phương thức.</li>
+            </ul>
+        </p>
+
+        <h3>3.3. Sử dụng Logging để theo dõi chương trình</h3>
+        <p>
+            Đôi khi việc đặt các breakpoint không phải là lựa chọn tốt. Thay vào đó, bạn có thể sử dụng các câu lệnh log để theo dõi hoạt động của chương trình mà không cần phải dừng lại. Ví dụ:
+        </p>
+
+        <div class="code-block">
+            <h4>Ví dụ sử dụng logging:</h4>
+            <pre><code>import java.util.logging.*;
+
+public class DebugExample {
+    private static final Logger logger = Logger.getLogger(DebugExample.class.getName());
+    
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 20;
+        
+        logger.info("Giá trị của x: " + x);
+        logger.info("Giá trị của y: " + y);
+        
+        int result = x + y;
+        logger.info("Kết quả: " + result);
+    }
+}</code></pre>
+        </div>
+
+        <p>
+            Bằng cách này, bạn có thể dễ dàng kiểm tra giá trị của các biến mà không cần phải dừng chương trình.
+        </p>
+
+        <h2>4. Kết luận</h2>
+        <p>
+            Debugging là một kỹ năng quan trọng để giúp bạn phát hiện và sửa lỗi trong chương trình. Bằng cách sử dụng breakpoints, watch expressions và các công cụ logging trong IntelliJ IDEA và Eclipse, bạn sẽ dễ dàng tìm ra vấn đề và khắc phục nhanh chóng. Hãy áp dụng các kỹ thuật này để nâng cao hiệu quả lập trình của bạn.
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Java Tutorials | Made with <a href="#">passion</a>.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
