@@ -16,7 +16,7 @@
         }
 
         header {
-            background: linear-gradient(45deg, #007bff, #6610f2);
+            background: black;
             color: white;
             padding: 40px 20px;
             text-align: center;
@@ -74,21 +74,122 @@
         <p class="description">Hiểu về Lập trình Hướng đối tượng thông qua các ví dụ dễ hiểu</p>
     </header>
 
+
     <div class="content">
-        <h2>Giới thiệu về OOP</h2>
-        <p>
-            Lập trình Hướng đối tượng (Object-Oriented Programming - OOP) là một phương pháp lập trình dựa trên khái niệm "đối tượng", 
-            trong đó mỗi đối tượng có thuộc tính (dữ liệu) và phương thức (hành vi).
-        </p>
-
-        <h2>Các khái niệm chính trong OOP</h2>
+        <h1>Khái niệm OOP trong Java và Ví dụ (Phần 1)</h1>
+        <p>Từ lâu Java nổi tiếng với việc hướng các lập trình viên phát triển suy nghĩ như các đối tượng thực tế, nó bao gồm dữ liệu và hành vi trong các khối được tạo ra có thể tái sử dụng. Từ các ứng dụng nhỏ đến hệ thống lớn, OOP trong Java luôn là định hướng không thể thiếu. Nó mở đường cho các giải pháp phần mềm có tính modular, đồng thời đi kèm với đó là khả năng mở rộng và sự mạnh mẽ vượt trội so với lập trình thủ tục truyền thống.</p>
+        <p>Sau đây, chúng ta sẽ cùng nhau đi tìm hiểu về các nguyên tắc, khái niệm và kỹ thuật biến OOP trong Java thành một yếu tố quan trọng trong lập trình.</p>
+    
+        <h2>1. Lập trình hướng đối tượng (OOP) trong Java là gì?</h2>
+        <p>Lập trình hướng đối tượng trong Java là một phần quan trọng và có thể nói là không thể thiếu, nó được sử dụng để thiết kế một chương trình bằng cách sử dụng các lớp và đối tượng. Và được mô tả lại là cách chúng ta kiểm soát dữ liệu để truy cập mã. Với OOP, khi làm việc với dữ liệu, các lập trình viên phải xác định kiểu dữ liệu của một cấu trúc dữ liệu và các hoạt động được áp dụng cho cấu trúc dữ liệu đó. OOP trong Java luôn tập trung vào việc cải thiện khả năng đọc mã và khả năng sử dụng lại mã một cách hiệu quả.</p>
+    
+        <p>Các nguyên tắc chính của lập trình hướng đối tượng bao gồm:</p>
         <ul>
-            <li><strong>Class:</strong> Là bản thiết kế hoặc khuôn mẫu cho các đối tượng.</li>
-            <li><strong>Object:</strong> Là một thể hiện của class.</li>
-            <li><strong>Inheritance:</strong> Là tính kế thừa, cho phép một class sử dụng lại các thuộc tính và phương thức của class khác.</li>
-            <li><strong>Polymorphism:</strong> Là tính đa hình, cho phép cùng một phương thức có thể có các cách thực hiện khác nhau.</li>
+            <li>Sự trừu tượng (Abstraction)</li>
+            <li>Bao đóng (Encapsulation)</li>
+            <li>Kế thừa (Inheritance)</li>
+            <li>Đa hình (Polymorphism)</li>
         </ul>
-
+    
+        <h2>2. Đối tượng (Objects) là gì?</h2>
+        <p>Đối tượng luôn được gọi là các thể hiện của một lớp (class) được tạo ra từ một lớp trong Java hoặc bất kỳ ngôn ngữ nào khác. Chúng có trạng thái (states) và hành vi (behaviour).</p>
+    
+        <p>Ví dụ:</p>
+        <pre>
+    <code>public class Stringee {
+        String company = "CONG TY CO PHAN STRINGEE";
+    
+        public static void main(String args[]) {
+            Stringee stringee = new Stringee();
+            System.out.println(stringee.company); // Kết quả: CONG TY CO PHAN STRINGEE
+        }
+    }
+    </code>
+        </pre>
+    
+        <p>Chúng ta cũng có thể tạo nhiều đối tượng trong cùng một lớp và truy cập chúng trong một lớp khác:</p>
+        <pre>
+    <code>public class Stringee {
+        String company = "CONG TY CO PHAN STRINGEE";
+        String email = "info@stringee.com";
+    }
+    
+    public class Show {
+        public static void main(String[] args) {
+            Stringee stringee1 = new Stringee();
+            Stringee stringee2 = new Stringee();
+            System.out.println(stringee1.company); // Kết quả: CONG TY CO PHAN STRINGEE
+            System.out.println(stringee2.email);  // Kết quả: info@stringee.com
+        }
+    }
+    </code>
+        </pre>
+    
+        <h2>3. Lớp (Classes) là gì?</h2>
+        <p>Lớp (Classes) có thể được coi như là các hàm khởi tạo (constructors) để tạo đối tượng. Tập hợp các đối tượng được gọi là một lớp. Lớp được xem là các đại lượng logic và không chiếm bất kỳ không gian nào trong bộ nhớ. Lớp còn được gọi là một bản mẫu (template) của một đối tượng.</p>
+    
+        <p>Cú pháp khai báo một lớp:</p>
+        <pre>
+    <code>class tenLop {
+        kieu bienThanhVien1;
+        kieu bienThanhVien2;
+        //...
+        kieu bienThanhVienN;
+    
+        kieu tenPhuongThuc1(danhSachThamSo) {
+            // thân phương thức
+        }
+    }
+    </code>
+        </pre>
+    
+        <h2>4. Trừu tượng (Abstraction) là gì?</h2>
+        <p>Trừu tượng là quá trình hiển thị chỉ thông tin cần thiết và ẩn đi thông tin không cần thiết. Chúng ta có thể nói rằng mục đích chính của trừu tượng là ẩn dữ liệu. Trừu tượng giúp giảm độ phức tạp và công sức trong lập trình.</p>
+    
+        <p>Ví dụ về lớp trừu tượng:</p>
+        <pre>
+    <code>abstract class Information {
+        public abstract void company();
+    }
+    
+    public class Stringee extends Information {
+        public void company() {
+            System.out.println("CONG TY CO PHAN STRINGEE");
+        }
+    
+        public static void main(String args[]) {
+            Information obj = new Stringee();
+            obj.company(); // Kết quả: CONG TY CO PHAN STRINGEE
+        }
+    }
+    </code>
+        </pre>
+    
+        <h2>5. Kế thừa (Inheritance) là gì?</h2>
+        <p>Kế thừa là một phương pháp trong đó một đối tượng kế thừa/tiếp nhận các thuộc tính của một đối tượng khác, đồng thời hỗ trợ phân loại theo cấp bậc.</p>
+    
+        <p>Cú pháp:</p>
+        <pre>
+    <code>class A {
+        // Nội dung của class A
+    }
+    
+    class B extends A {
+        // Nội dung của class B
+    }
+    </code>
+        </pre>
+    
+        <h2>6. Đa hình (Polymorphism) là gì?</h2>
+        <p>Đa hình ám chỉ nhiều hình thức, hoặc là một quá trình thực hiện một hành động duy nhất theo cách khác nhau. Đa hình chia thành hai loại:</p>
+        <ul>
+            <li>Đa hình biên dịch (Compile-time polymorphism)</li>
+            <li>Đa hình runtime (Runtime polymorphism)</li>
+        </ul>
+    
+        <p>...</p>
+        <!-- hi -->
+        
         <h2>Ví dụ: Quản lý sinh viên sử dụng OOP</h2>
         <div class="code-block">
             <h4>Code:</h4>

@@ -16,7 +16,7 @@
         }
 
         header {
-            background: linear-gradient(45deg, #4caf50, #81c784);
+            background: black;
             color: white;
             padding: 40px 20px;
             text-align: center;
@@ -81,15 +81,112 @@
     </header>
 
     <div class="content">
-        <h2>1. Giới thiệu về Java Streams API</h2>
-        <p>
-            Java Streams API, được giới thiệu trong Java 8, là một phần quan trọng của ngôn ngữ Java giúp xử lý dữ liệu theo cách thức hàm (functional style). Streams API giúp xử lý dữ liệu dễ dàng, với các khả năng như lọc, chuyển đổi, và giảm dữ liệu mà không cần phải viết các vòng lặp phức tạp.
-        </p>
+        <h1>Stream Xử Lý Dữ Liệu Thế Nào Trong Java</h1>
 
-        <h2>2. Các thao tác cơ bản với Streams</h2>
-        <p>
-            Streams API cung cấp một loạt các thao tác như <code>filter</code>, <code>map</code>, và <code>reduce</code> để xử lý các danh sách dữ liệu. Dưới đây là ví dụ về cách sử dụng những thao tác này.
-        </p>
+        <p>Sự ra đời của Java 8 đã làm thay đổi thói quen sử dụng của nhiều người lập trình đối với các Collection so với các phiên bản Java trước. Một trong những điều mới mẻ nhất chính là thêm các phương thức mở rộng vào các interface có sẵn (Collection, List, Iterable) cùng các lớp abstraction như Stream để thực hiện các phép toán tổng hợp trên tập dữ liệu và không làm thay đổi dữ liệu cũ. Trong bài viết này chúng ta sẽ tìm hiểu về Stream là gì và các đặc điểm của nó.</p>
+    
+        <h2>1. Stream là gì?</h2>
+        <p>Stream được giới thiệu từ Java 8 và nằm trong gói <code>java.util.stream</code>. Stream là một chuỗi các giá trị cho phép thực hiện các phép toán tổng hợp trên dữ liệu như duyệt, tìm giá trị lớn (hoặc nhỏ) nhất, sắp xếp, lọc, hay giới hạn kết quả. Các phương thức của Stream được phân thành hai loại: <strong>intermediate operations</strong> (trả về một Stream mới) và <strong>terminal operations</strong> (trả về kiểu dữ liệu khác như int, long, List, Set, v.v.).</p>
+    
+        <p>Ví dụ, thay vì sử dụng vòng lặp <code>for</code> để sắp xếp một mảng, bạn chỉ cần sử dụng một hoặc vài phương thức của Stream một cách ngắn gọn và hiệu quả.</p>
+    
+        <h3>Các tính chất của Stream:</h3>
+        <ul>
+            <li><strong>Stream không phải là một cấu trúc dữ liệu</strong>: Dữ liệu đầu vào có thể là các Collection (ArrayList, Set, LinkedList…), Arrays, hoặc Input/Output streams.</li>
+            <li><strong>Stream không làm thay đổi dữ liệu gốc</strong>: Thay vào đó, nó trả về kết quả mới thông qua các phương thức.</li>
+            <li><strong>Các phương thức của Stream</strong>: Được phân thành hai loại: <strong>Intermediate Operations</strong> (hoạt động trung gian) và <strong>Terminal Operations</strong> (hoạt động đầu cuối).</li>
+        </ul>
+    
+        <p><strong>Ví dụ về Stream:</strong></p>
+        <pre><code>Collection&lt;Integer&gt; collection = Arrays.asList(1, 2, 3);
+    Stream&lt;Integer&gt; streamOfCollection = collection.stream();</code></pre>
+    
+        <h2>2. Các methods trong Stream</h2>
+    
+        <h3>2.1 Terminal Operations (Hoạt động đầu cuối)</h3>
+        <p>Các phương thức terminal trả về giá trị khác kiểu <code>Stream</code> như kiểu nguyên thủy (<code>int</code>, <code>long</code>), đối tượng (<code>String</code>, <code>Integer</code>), hoặc Collections.</p>
+    
+        <h4>Collect method</h4>
+        <p>Dùng để thu thập kết quả của Stream thành một List hoặc Set.</p>
+        <pre><code>List&lt;String&gt; strings = Arrays.asList("args", "", "code", "learn", "...");
+    List&lt;String&gt; filter = strings.stream().collect(Collectors.toList());
+    System.out.println(filter);</code></pre>
+        <p>Output: <code>[args, code, learn, ...]</code></p>
+    
+        <h4>forEach method</h4>
+        <p>Dùng để duyệt qua từng phần tử của Stream.</p>
+        <pre><code>strings.stream().forEach(s -&gt; System.out.println(s));</code></pre>
+        <p>Output:
+            <pre><code>args
+    (empty)
+    code
+    learn
+    ...</code></pre></p>
+    
+        <h4>Reduce method</h4>
+        <p>Kết hợp các phần tử trong Stream thành một giá trị duy nhất.</p>
+        <pre><code>String result = strings.stream().reduce("-", String::concat);
+    System.out.println(result);</code></pre>
+        <p>Output: <code>-argscodelearn...</code></p>
+    
+        <h4>Max, Min methods</h4>
+        <p>Tìm giá trị lớn nhất hoặc nhỏ nhất trong Stream.</p>
+        <pre><code>Integer max = list.stream().max(Integer::compare).get();
+    Integer min = list.stream().min(Integer::compare).get();
+    System.out.println("Max: " + max + "\nMin: " + min);</code></pre>
+        <p>Output: <code>Max: 10<br>Min: 1</code></p>
+    
+        <h3>2.2 Intermediate Operations (Hoạt động trung gian)</h3>
+        <p>Các phương thức intermediate trả về một Stream mới và có thể kết hợp với nhau.</p>
+    
+        <h4>Distinct method</h4>
+        <p>Loại bỏ các phần tử trùng lặp.</p>
+        <pre><code>list.stream().distinct().forEach(System.out::println);</code></pre>
+        <p>Output: các phần tử duy nhất</p>
+    
+        <h4>Map method</h4>
+        <p>Thay đổi giá trị của các phần tử trong Stream.</p>
+        <pre><code>list.stream().distinct().map(i -&gt; i * i).forEach(System.out::println);</code></pre>
+        <p>Output: bình phương của các phần tử</p>
+    
+        <h4>Filter method</h4>
+        <p>Lọc các phần tử trong Stream theo điều kiện.</p>
+        <pre><code>list.stream().filter(i -&gt; i &gt; 2).forEach(System.out::println);</code></pre>
+        <p>Output: các phần tử lớn hơn 2</p>
+    
+        <h4>Sorted method</h4>
+        <p>Sắp xếp các phần tử trong Stream.</p>
+        <pre><code>list.stream().sorted().forEach(System.out::println);</code></pre>
+        <p>Output: các phần tử được sắp xếp theo thứ tự tăng dần.</p>
+    
+        <h4>Limit method</h4>
+        <p>Giới hạn số lượng phần tử trong Stream.</p>
+        <pre><code>list.stream().limit(3).forEach(System.out::println);</code></pre>
+        <p>Output: lấy ra 3 phần tử đầu tiên.</p>
+    
+        <h4>Skip method</h4>
+        <p>Bỏ qua <code>n</code> phần tử đầu tiên và trả về phần còn lại.</p>
+        <pre><code>list.stream().skip(3).forEach(System.out::println);</code></pre>
+        <p>Output: các phần tử còn lại trừ 3 phần tử đầu tiên.</p>
+    
+        <h2>3. Parallel Stream</h2>
+        <p><code>ParallelStream</code> là phiên bản song song của Stream, cho phép xử lý đồng thời các phần tử trong Stream.</p>
+        <pre><code>String streamString = strings.stream().reduce(" I'm-", String::concat);
+    String parallelString = strings.parallelStream().reduce(" I'm-", String::concat);
+    System.out.println("Stream: " + streamString + "\nParallelStream: " + parallelString);</code></pre>
+        <p>Output:
+            <pre><code>Stream: I'm-codelearn...
+    ParallelStream: I'm-codelearn...</code></pre></p>
+    
+        <h3>Chú ý:</h3>
+        <ul>
+            <li>Các phương thức <strong>intermediate</strong> chỉ được thực thi khi một phương thức <strong>terminal</strong> được gọi.</li>
+            <li>Một Stream có thể có nhiều phương thức <strong>intermediate</strong> nhưng chỉ có một phương thức <strong>terminal</strong> để xử lý stream được trả về từ các intermediate method bên trên.</li>
+        </ul>
+    
+      
+        <!-- aaaa -->
+    
 
         <h3>Ví dụ 1: <code>filter</code> - Lọc dữ liệu</h3>
         <p>

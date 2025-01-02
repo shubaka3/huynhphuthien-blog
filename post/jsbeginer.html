@@ -16,7 +16,7 @@
         }
 
         header {
-            background: linear-gradient(45deg, #17a2b8, #63c2de);
+            background: black;
             color: white;
             padding: 40px 20px;
             text-align: center;
@@ -77,33 +77,75 @@
 <body>
     <header>
         <h1>Học JavaScript cơ bản: Từ số không đến viết hàm đầu tiên</h1>
-        <p class="description">Khám phá các khái niệm cơ bản như biến, vòng lặp và cách viết hàm đầu tiên trong JavaScript!</p>
+        <p class="description">Khám phá các khái niệm cơ bản như biến, vòng lặp, điều kiện, hàm, và cách viết hàm đầu tiên trong JavaScript!</p>
     </header>
 
     <div class="content">
         <h2>1. Khái niệm cơ bản trong JavaScript</h2>
-        <p>JavaScript là ngôn ngữ lập trình phổ biến được sử dụng để phát triển web. Dưới đây là một số khái niệm cơ bản bạn cần hiểu khi bắt đầu học JavaScript:</p>
+        <p>JavaScript là ngôn ngữ lập trình phổ biến được sử dụng để phát triển web. Được sử dụng rộng rãi trong lập trình frontend (phía client) và backend (phía server), JavaScript giúp tạo ra các trang web động, tương tác với người dùng. Dưới đây là một số khái niệm cơ bản bạn cần hiểu khi bắt đầu học JavaScript:</p>
         
         <h3>Biến (Variables)</h3>
-        <p>Biến trong JavaScript là nơi bạn lưu trữ giá trị. Để khai báo một biến, bạn có thể sử dụng các từ khóa như <code>var</code>, <code>let</code>, hoặc <code>const</code>. Ví dụ:</p>
+        <p>Biến trong JavaScript là nơi bạn lưu trữ giá trị. Bạn có thể khai báo một biến bằng cách sử dụng các từ khóa như <code>var</code>, <code>let</code>, hoặc <code>const</code>. Mỗi loại từ khóa có những điểm khác nhau:</p>
+        <ul>
+            <li><code>var</code>: Được sử dụng trong JavaScript từ các phiên bản cũ, có phạm vi toàn cục (global scope) hoặc phạm vi hàm (function scope).</li>
+            <li><code>let</code>: Được giới thiệu trong ES6, có phạm vi khối (block scope), an toàn hơn khi làm việc với các vòng lặp.</li>
+            <li><code>const</code>: Được sử dụng để khai báo hằng số, có giá trị không thể thay đổi sau khi được gán giá trị ban đầu.</li>
+        </ul>
+        <p>Ví dụ:</p>
         <pre><code>let x = 10;</code></pre>
         <p>Biến <code>x</code> sẽ lưu trữ giá trị 10 trong ví dụ trên.</p>
 
         <h3>Vòng lặp (Loops)</h3>
-        <p>Vòng lặp trong JavaScript giúp bạn lặp lại một đoạn mã nhiều lần. Ví dụ sử dụng vòng lặp <code>for</code>:</p>
+        <p>Vòng lặp trong JavaScript giúp bạn lặp lại một đoạn mã nhiều lần. Đây là một kỹ thuật rất hữu ích khi bạn muốn thực hiện các thao tác lặp lại như duyệt qua danh sách, mảng, hoặc xử lý một số lượng lớn dữ liệu. Ví dụ sử dụng vòng lặp <code>for</code>:</p>
         <pre><code>for (let i = 0; i < 5; i++) {
     console.log(i);
 }</code></pre>
         <p>Đoạn mã trên sẽ in ra các số từ 0 đến 4.</p>
-
+        <p>Cũng có một số loại vòng lặp khác trong JavaScript như <code>while</code> và <code>do...while</code> giúp bạn linh hoạt hơn trong việc điều khiển vòng lặp:</p>
+        <pre><code>let i = 0;
+while (i < 5) {
+    console.log(i);
+    i++;
+}</code></pre>
+        
         <h3>Hàm (Functions)</h3>
-        <p>Hàm là một khối mã có thể tái sử dụng để thực hiện một công việc cụ thể. Bạn có thể khai báo hàm như sau:</p>
+        <p>Hàm là một khối mã có thể tái sử dụng để thực hiện một công việc cụ thể. Bạn có thể khai báo hàm bằng từ khóa <code>function</code> trong JavaScript. Hàm nhận đầu vào là các tham số và có thể trả về một giá trị.</p>
+        <p>Ví dụ một hàm đơn giản tính tổng:</p>
         <pre><code>function sum(a, b) {
     return a + b;
 }</code></pre>
-        <p>Hàm <code>sum</code> nhận hai tham số <code>a</code> và <code>b</code>, sau đó trả về tổng của chúng.</p>
+        <p>Hàm <code>sum</code> nhận hai tham số <code>a</code> và <code>b</code>, sau đó trả về tổng của chúng. Bạn có thể gọi hàm này như sau:</p>
+        <pre><code>console.log(sum(5, 10)); // Kết quả: 15</code></pre>
 
-        <h2>2. Ví dụ về hàm tính tổng</h2>
+        <h2>2. Các khái niệm nâng cao hơn trong JavaScript</h2>
+        <h3>Điều kiện (Conditionals)</h3>
+        <p>Điều kiện trong JavaScript giúp bạn quyết định liệu một đoạn mã có thực thi hay không, dựa trên giá trị của các biểu thức. Bạn có thể sử dụng <code>if</code>, <code>else</code>, và <code>else if</code> để kiểm tra các điều kiện khác nhau.</p>
+        <pre><code>let age = 18;
+if (age >= 18) {
+    console.log("Bạn đủ tuổi trưởng thành.");
+} else {
+    console.log("Bạn chưa đủ tuổi trưởng thành.");
+}</code></pre>
+
+        <h3>Mảng (Arrays)</h3>
+        <p>Mảng trong JavaScript là một danh sách có thể chứa nhiều giá trị. Bạn có thể tạo mảng và thao tác với các phần tử trong mảng bằng cách sử dụng chỉ số (index). Mảng có thể chứa bất kỳ loại dữ liệu nào, bao gồm cả chuỗi, số, hoặc các đối tượng phức tạp.</p>
+        <pre><code>let fruits = ["Apple", "Banana", "Cherry"];
+console.log(fruits[1]); // Kết quả: Banana</code></pre>
+        <p>Trong ví dụ trên, mảng <code>fruits</code> chứa ba loại trái cây, và bạn có thể truy cập phần tử thứ hai bằng cách sử dụng chỉ số <code>1</code>.</p>
+
+        <h3>Đối tượng (Objects)</h3>
+        <p>Đối tượng trong JavaScript cho phép bạn nhóm các thuộc tính và phương thức lại với nhau dưới một tên chung. Một đối tượng có thể chứa các thuộc tính (key) và giá trị (value), và các phương thức là các hàm thuộc về đối tượng đó.</p>
+        <pre><code>let person = {
+    name: "John",
+    age: 30,
+    greet: function() {
+        console.log("Hello " + this.name);
+    }
+};
+person.greet(); // Kết quả: Hello John</code></pre>
+        <p>Đoạn mã trên khai báo một đối tượng <code>person</code> với các thuộc tính <code>name</code>, <code>age</code>, và phương thức <code>greet</code>.</p>
+
+        <h2>3. Ví dụ về hàm tính tổng</h2>
         <p>Để hiểu rõ hơn về cách viết hàm trong JavaScript, hãy thử ví dụ sau:</p>
         <pre><code>function sum(a, b) {
     return a + b;
@@ -112,8 +154,8 @@
 console.log(sum(5, 10)); // Kết quả: 15</code></pre>
         <p>Trong ví dụ trên, hàm <code>sum</code> sẽ nhận hai số 5 và 10, sau đó trả về tổng là 15. Dòng lệnh <code>console.log(sum(5, 10));</code> sẽ in ra kết quả này trên bảng điều khiển (console).</p>
 
-        <h2>3. Kết luận</h2>
-        <p>JavaScript là một ngôn ngữ lập trình mạnh mẽ và dễ học. Bằng cách hiểu rõ các khái niệm cơ bản như biến, vòng lặp và hàm, bạn sẽ có nền tảng vững chắc để phát triển các ứng dụng web. Hãy tiếp tục luyện tập và khám phá thêm nhiều tính năng mạnh mẽ của JavaScript!</p>
+        <h2>4. Kết luận</h2>
+        <p>JavaScript là một ngôn ngữ lập trình mạnh mẽ và dễ học. Bằng cách hiểu rõ các khái niệm cơ bản như biến, vòng lặp, điều kiện, mảng, đối tượng và hàm, bạn sẽ có nền tảng vững chắc để phát triển các ứng dụng web động. Hãy tiếp tục luyện tập và khám phá thêm nhiều tính năng mạnh mẽ của JavaScript!</p>
     </div>
 
     <footer>

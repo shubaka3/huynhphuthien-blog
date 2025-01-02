@@ -16,7 +16,7 @@
         }
 
         header {
-            background: linear-gradient(45deg, #4caf50, #81c784);
+            background: black;
             color: white;
             padding: 40px 20px;
             text-align: center;
@@ -81,35 +81,132 @@
     </header>
 
     <div class="content">
-        <h2>1. Giới thiệu về Debugging trong Java</h2>
-        <p>
-            Debugging là quá trình phát hiện và sửa chữa lỗi trong mã nguồn chương trình. Trong Java, bạn có thể sử dụng các công cụ debug tích hợp sẵn trong các IDE như IntelliJ IDEA và Eclipse để giúp tìm và sửa lỗi hiệu quả hơn.
-        </p>
+        <h1>Java Debugging: Cẩm nang gỡ lỗi toàn tập</h1>
+        <p>Debug là kỹ năng thiết yếu cho mọi lập trình viên Java, giúp bạn kiểm tra và giải quyết các vấn đề trong mã nguồn. Từ lỗi logic, crash bất ngờ cho đến bottlenecks về hiệu suất, việc nắm vững cách debug hiệu quả ứng dụng Java là vô cùng quan trọng.</p>
+    
+        <h2>Tìm hiểu về Debug - Khái niệm cơ bản cho lập trình viên</h2>
+        <p>Debug là quá trình xác định, phân tích và sửa lỗi trong mã nguồn phần mềm. Trong Java, lỗi có thể từ lỗi cú pháp (phát hiện lúc biên dịch) đến lỗi logic (phát hiện lúc chạy), bottlenecks về hiệu suất hoặc sự cố chỉ xảy ra trong điều kiện cụ thể. Java Virtual Machine (JVM) cung cấp một số tính năng debug, và hầu hết các IDE hiện đại, chẳng hạn như IntelliJ IDEA và Eclipse, đều cung cấp các công cụ debug tích hợp giúp lập trình viên kiểm tra hoạt động của ứng dụng trong thời gian chạy.</p>
+    
+        <h2>Các công cụ Debug Java phổ biến - Hỗ trợ đắc lực cho lập trình viên</h2>
+        <ul>
+            <li><strong>IntelliJ IDEA:</strong> Cung cấp trình debug mạnh mẽ với các tính năng như breakpoint, kiểm tra biến, thực thi từng bước và debug từ xa.</li>
+            <li><strong>Eclipse IDE:</strong> Một IDE Java được sử dụng rộng rãi với khả năng debug mạnh mẽ bao gồm thay thế mã nóng, debug luồng và đánh giá biểu thức.</li>
+            <li><strong>JDB (Java Debugger):</strong> Một công cụ dòng lệnh được cung cấp bởi JDK cho phép bạn debug các ứng dụng Java trong môi trường không có giao diện đồ họa.</li>
+            <li><strong>VisualVM:</strong> Một công cụ giám sát và debug có thể cấu hình ứng dụng và phân tích việc sử dụng bộ nhớ.</li>
+            <li><strong>JProfiler:</strong> Một công cụ cấu hình và debug thương mại để giám sát hiệu suất và phân tích bộ nhớ trong các ứng dụng Java.</li>
+            <li><strong>JConsole:</strong> Được sử dụng để giám sát số liệu hiệu suất JVM và phát hiện các sự cố như rò rỉ bộ nhớ.</li>
+        </ul>
+    
+        <h2>Debug cơ bản trong IDE - Hướng dẫn chi tiết từ A - Z</h2>
+        <h3>1. Đặt Breakpoint - Dừng mã nguồn tại vị trí mong muốn</h3>
+        <p>Breakpoint tạm dừng việc thực thi chương trình của bạn tại một dòng cụ thể, cho phép bạn kiểm tra trạng thái của ứng dụng tại thời điểm đó.</p>
+        <h4>Cách đặt Breakpoint:</h4>
+        <ul>
+            <li><strong>Trong IntelliJ IDEA:</strong> Nhấp vào gutter bên cạnh số dòng nơi bạn muốn đặt breakpoint. Một chấm đỏ cho biết breakpoint.</li>
+            <li><strong>Trong Eclipse:</strong> Tương tự, hãy nhấp vào lề trái của trình chỉnh sửa mã bên cạnh dòng bạn muốn tạm dừng.</li>
+        </ul>
+    
+        <h3>2. Thực thi từng bước - Kiểm soát hoạt động của mã nguồn</h3>
+        <p>Sau khi quá trình thực thi dừng tại một breakpoint, bạn có thể thực thi từng bước mã của mình để hiểu luồng của nó:</p>
+        <ul>
+            <li><strong>Step Over:</strong> Di chuyển đến dòng tiếp theo trong cùng một phương thức, bỏ qua các lệnh gọi phương thức.</li>
+            <li><strong>Step Into:</strong> Vào phương thức hoặc hàm đang được gọi.</li>
+            <li><strong>Step Out:</strong> Thoát khỏi phương thức hiện tại và quay lại người gọi.</li>
+        </ul>
+    
+        <h3>3. Kiểm tra biến - Theo dõi biến trong quá trình Debug</h3>
+        <p>Khi quá trình thực thi chương trình bị tạm dừng, bạn có thể kiểm tra giá trị của các biến tại thời điểm đó. Trong hầu hết các IDE, bạn có thể di chuột qua các biến để xem giá trị hiện tại của chúng. IDE cũng cung cấp Ngăn Biến nơi bạn có thể kiểm tra tất cả các biến trong phạm vi hiện tại, bao gồm các biến cục bộ và các thành viên của lớp.</p>
+    
+        <h3>4. Theo dõi và biểu thức - Giám sát sự thay đổi của biến</h3>
+        <p>Bạn cũng có thể tạo watches để theo dõi giá trị của các biểu thức hoặc biến cụ thể. Điều này hữu ích khi bạn muốn quan sát cách một biến thay đổi khi mã thực thi.</p>
+    
+        <h2>Debug từ xa - Xử lý sự cố trên Server từ xa</h2>
+        <p>Debug từ xa cho phép bạn debug các ứng dụng đang chạy trên một máy hoặc môi trường khác (ví dụ: máy chủ sản xuất) bằng cách kết nối IDE của bạn với JVM từ xa.</p>
+        <h4>Các bước để bật Debug từ xa:</h4>
+        <ul>
+            <li>Thêm các tùy chọn JVM sau vào ứng dụng bạn muốn debug từ xa: <code>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005</code></li>
+            <li><code>address=5005:</code> Đây là cổng mà trình debug sẽ nghe.</li>
+            <li><code>suspend=n:</code> Đặt thành y sẽ khiến JVM đợi cho đến khi trình debug được đính kèm trước khi tiếp tục thực thi.</li>
+        </ul>
+    
+        <h2>Debug với nhật ký (Logs) - Ghi lại hoạt động của ứng dụng</h2>
+        <p>Ghi nhật ký là một trong những cách phổ biến và hiệu quả nhất để debug ứng dụng, đặc biệt là trong môi trường sản xuất, nơi không thể đính kèm trình debug. Java cung cấp các framework ghi nhật ký sau:</p>
+        <ul>
+            <li>Log4j: Một thư viện ghi nhật ký phổ biến cho phép bạn xuất nhật ký ở các mức độ khác nhau (INFO, DEBUG, WARN, ERROR).</li>
+            <li>SLF4J: Một facade ghi nhật ký hoạt động với nhiều backend khác nhau như Log4j và Logback.</li>
+            <li>java.util.logging: API ghi nhật ký tích hợp sẵn của Java.</li>
+        </ul>
+    
+        <p>Ví dụ sử dụng với SLF4J:</p>
+        <pre><code>
+    import org.slf4j.Logger;
+    import org.slf4j.LoggerFactory;
+    
+    public class MyClass {
+        private static final Logger logger = LoggerFactory.getLogger(MyClass.class);
+    
+        public static void main(String[] args) {
+            logger.info("Application started");
+            logger.debug("Debugging value: {}", someVariable);
+            logger.error("An error occurred", exception);
+        }
+    }
+        </code></pre>
+    
+        <h2>Các kỹ thuật Debug nâng cao - Nâng cao hiệu quả Debug</h2>
+        <h3>1. Breakpoint ngoại lệ - Xác định nguyên nhân gây ra ngoại lệ</h3>
+        <p>Breakpoint ngoại lệ tạm dừng quá trình thực thi khi một loại ngoại lệ cụ thể được ném ra, bất kể nó xảy ra ở đâu trong mã. Điều này hữu ích để xác định vị trí và lý do tại sao một số ngoại lệ nhất định được đưa ra.</p>
+    
+        <h3>2. Breakpoint có điều kiện - Kiểm soát điểm dừng chính xác hơn</h3>
+        <p>Đôi khi bạn chỉ muốn tạm dừng quá trình thực thi khi một số điều kiện nhất định được đáp ứng. Breakpoint có điều kiện cho phép bạn chỉ định các điều kiện (ví dụ: giá trị biến hoặc trạng thái) mà theo đó quá trình thực thi sẽ dừng lại.</p>
+    
+        <h3>3. Thay thế mã nóng (HCR) - Cập nhật mã nguồn không cần khởi động lại</h3>
+        <p>Thay thế mã nóng cho phép bạn sửa đổi và áp dụng các thay đổi cho mã của mình trong phiên debug mà không cần khởi động lại ứng dụng. Điều này đặc biệt hữu ích trong các ứng dụng chạy lâu hoặc môi trường mà việc khởi động lại thường xuyên gây gián đoạn.</p>
+    
+        <h3>4. Debug luồng - Kiểm soát luồng trong ứng dụng đa luồng</h3>
+        <p>Các ứng dụng Java có thể có nhiều luồng chạy đồng thời và debug các ứng dụng đa luồng có thể phức tạp. Trong cửa sổ Debugger của IDE, bạn có thể:</p>
+        <ul>
+            <li>Kiểm tra tất cả các luồng đang chạy.</li>
+            <li>Tạm dừng, tiếp tục hoặc kết thúc các luồng riêng lẻ.</li>
+            <li>Đặt breakpoint dành riêng cho một luồng để phân tích hoạt động cụ thể của luồng.</li>
+        </ul>
+    
+        <h2>Thực hành tốt nhất để Debug ứng dụng Java hiệu quả</h2>
+        <ul>
+            <li>Tái tạo sự cố: Trước khi debug, hãy đảm bảo rằng bạn có thể tái tạo sự cố một cách nhất quán. Điều này giúp bạn dễ dàng theo dõi vấn đề hơn.</li>
+            <li>Sử dụng nhật ký: Ngay cả khi sử dụng trình debug, nhật ký cung cấp lịch sử có giá trị về các sự kiện, đặc biệt là khi bạn đang xử lý các sự cố trong môi trường sản xuất hoặc đa luồng.</li>
+            <li>Bắt đầu với breakpoint đơn giản: Đừng đặt quá nhiều breakpoint lúc đầu. Hãy bắt đầu bằng cách tập trung vào các khu vực quan trọng của mã, nơi bạn nghi ngờ sự cố bắt nguồn.</li>
+            <li>Sử dụng breakpoint có điều kiện: Tránh dừng chương trình một cách không cần thiết bằng cách sử dụng các điều kiện trên breakpoint để chỉ tạm dừng quá trình thực thi khi một số tiêu chí nhất định được đáp ứng.</li>
+            <li>Đừng lạm dụng debug: Debug có thể tốn thời gian. Đôi khi, lùi lại một bước và xem xét mã của bạn một cách logic hoặc sử dụng các bài kiểm tra có thể giúp bạn xác định sự cố nhanh hơn.</li>
+            <li>Tập trung vào các trường hợp Edge: Lỗi thường phát sinh trong các trường hợp Edge, chẳng hạn như xử lý giá trị null, lỗi ngoài giới hạn hoặc sự cố đồng bộ hóa luồng.</li>
+        </ul>
+        <!-- aaaaaa -->
+       
 
-        <h2>2. Sử dụng Breakpoints trong IntelliJ/Eclipse</h2>
+        <h2>5. Sử dụng Breakpoints trong IntelliJ/Eclipse</h2>
         <p>
             Breakpoints cho phép bạn tạm dừng chương trình tại một điểm cụ thể trong mã nguồn để kiểm tra các giá trị của biến và trạng thái của ứng dụng. Dưới đây là cách thiết lập breakpoints trong IntelliJ IDEA và Eclipse:
         </p>
 
-        <h3>2.1. Thiết lập Breakpoint trong IntelliJ IDEA</h3>
+        <h3>5.1. Thiết lập Breakpoint trong IntelliJ IDEA</h3>
         <p>
             Để thiết lập một breakpoint trong IntelliJ IDEA, bạn chỉ cần nhấp chuột vào cạnh trái của dòng mã nơi bạn muốn dừng chương trình. Một dấu chấm đỏ sẽ xuất hiện, biểu thị điểm dừng (breakpoint).
         </p>
         <img src="https://example.com/intellij-breakpoint.jpg" alt="Breakpoints trong IntelliJ IDEA">
 
-        <h3>2.2. Thiết lập Breakpoint trong Eclipse</h3>
+        <h3>5.2. Thiết lập Breakpoint trong Eclipse</h3>
         <p>
             Trong Eclipse, bạn có thể thiết lập breakpoint bằng cách nhấp chuột phải vào dòng mã và chọn <strong>Toggle Breakpoint</strong>. Bạn cũng có thể sử dụng phím tắt <strong>Ctrl + Shift + B</strong>.
         </p>
         <img src="https://example.com/eclipse-breakpoint.jpg" alt="Breakpoints trong Eclipse">
 
-        <h2>3. Các Tips và Tricks để Debug hiệu quả</h2>
-        <h3>3.1. Sử dụng Watch Expressions</h3>
+        <h2>6. Các Tips và Tricks để Debug hiệu quả</h2>
+        <h3>6.1 Sử dụng Watch Expressions</h3>
         <p>
             Watch Expressions cho phép bạn theo dõi giá trị của các biến trong suốt quá trình chạy của chương trình. Bạn có thể thêm các biểu thức để kiểm tra các giá trị mà bạn quan tâm, ngay cả khi chương trình đã tạm dừng tại một breakpoint.
         </p>
 
-        <h3>3.2. Step Over, Step Into và Step Out</h3>
+        <h3>6.2. Step Over, Step Into và Step Out</h3>
         <p>
             Khi debug, bạn sẽ sử dụng ba lệnh quan trọng: 
             <ul>
@@ -119,7 +216,7 @@
             </ul>
         </p>
 
-        <h3>3.3. Sử dụng Logging để theo dõi chương trình</h3>
+        <h3>6.3. Sử dụng Logging để theo dõi chương trình</h3>
         <p>
             Đôi khi việc đặt các breakpoint không phải là lựa chọn tốt. Thay vào đó, bạn có thể sử dụng các câu lệnh log để theo dõi hoạt động của chương trình mà không cần phải dừng lại. Ví dụ:
         </p>
@@ -148,7 +245,7 @@ public class DebugExample {
             Bằng cách này, bạn có thể dễ dàng kiểm tra giá trị của các biến mà không cần phải dừng chương trình.
         </p>
 
-        <h2>4. Kết luận</h2>
+        <h2>7. Kết luận</h2>
         <p>
             Debugging là một kỹ năng quan trọng để giúp bạn phát hiện và sửa lỗi trong chương trình. Bằng cách sử dụng breakpoints, watch expressions và các công cụ logging trong IntelliJ IDEA và Eclipse, bạn sẽ dễ dàng tìm ra vấn đề và khắc phục nhanh chóng. Hãy áp dụng các kỹ thuật này để nâng cao hiệu quả lập trình của bạn.
         </p>

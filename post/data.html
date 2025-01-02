@@ -16,7 +16,7 @@
         }
 
         header {
-            background: linear-gradient(45deg, #007bff, #6c757d);
+            background: black;
             color: white;
             padding: 40px 20px;
             text-align: center;
@@ -75,30 +75,233 @@
     </header>
 
     <div class="content">
-        <h2>Giới thiệu</h2>
-        <p>
-            Trong lập trình Java, việc hiểu rõ và sử dụng các cấu trúc dữ liệu như <code>ArrayList</code>, <code>LinkedList</code>, và <code>HashMap</code> là rất quan trọng. Những cấu trúc này giúp quản lý và thao tác dữ liệu hiệu quả hơn.
-        </p>
+        <h2>Các cấu trúc dữ liệu và thuật toán hay dùng</h2>
 
-        <h2>1. ArrayList</h2>
-        <p>
-            <code>ArrayList</code> là một danh sách động cho phép lưu trữ các phần tử có thể thay đổi kích thước.
-        </p>
-        <pre><code>import java.util.ArrayList;
+        <h3>Cấu trúc dữ liệu</h3>
 
-public class ArrayListExample {
+        <h4>List :</h4>
+        <p>Là một tập hợp các phần tử được sắp xếp theo một thứ tự nhất định. Mỗi phần tử trong danh sách có một chỉ số (index) duy nhất, bắt đầu từ 0. Các phần tử trong danh sách có thể trùng lặp. Có thể truy cập, thêm, xóa hoặc sửa đổi phần tử trong danh sách thông qua chỉ số của chúng. Các loại List phổ biến bao gồm: Array List, Linked List, Vector, Stack, Queue, v.v.</p>
+
+        <div class="code-block">
+            <h5>Demo</h5>
+            <pre>
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
     public static void main(String[] args) {
-        ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
-        list.add("Java");
-        list.add("Python");
-        list.add("C++");
+        List<String> myList = new ArrayList<>();
 
-        for (String lang : list) {
-            System.out.println(lang);
+        // Thêm phần tử vào danh sách
+        myList.add("Apple");
+        myList.add("Banana");
+        myList.add("Orange");
+
+        // In danh sách
+        for (String fruit : myList) {
+            System.out.println(fruit);
         }
     }
-}</code></pre>
+}
+            </pre>
+        </div>
 
+        <h4>Map:</h4>
+        <p>Map trong Java đại diện cho một bộ cặp key-value. Là một tập hợp các cặp khóa-giá trị (key-value pairs). Mỗi khóa trong Map là duy nhất, và được ánh xạ đến một giá trị tương ứng. Không có khái niệm về thứ tự trong Map, trừ khi sử dụng các loại Map đặc biệt như LinkedHashMap hoặc TreeMap. Có thể truy cập, thêm, xóa hoặc sửa đổi giá trị trong Map thông qua khóa tương ứng. Các loại Map phổ biến bao gồm: HashMap, TreeMap, LinkedHashMap, v.v.</p>
+
+        <div class="code-block">
+            <h5>Demo</h5>
+            <pre>
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main {
+    public static void main(String[] args) {
+        Map<String, Integer> myMap = new HashMap<>();
+        // Thêm cặp key-value vào map
+        myMap.put("Alice", 25);
+        myMap.put("Bob", 30);
+        myMap.put("Charlie", 28);
+
+        // Truy cập và in ra các giá trị trong map
+        for (Map.Entry<String, Integer> entry : myMap.entrySet()) {
+            System.out.println(entry.getKey() + " is " + entry.getValue() + " years old.");
+        }
+    }
+}
+            </pre>
+        </div>
+
+        <h4>Stack:</h4>
+        <p>Stack là một cấu trúc dữ liệu trừu tượng được sử dụng trong lập trình để lưu trữ và quản lý các phần tử theo cơ chế "Last In, First Out" (LIFO). Điều này có nghĩa là phần tử cuối cùng được thêm vào stack sẽ là phần tử được lấy ra đầu tiên khi thực hiện thao tác lấy ra (pop).</p>
+
+        <div class="code-block">
+            <h5>Demo</h5>
+            <pre>
+import java.util.Stack;
+
+public class Main {
+    public static void main(String[] args) {
+        Stack<Integer> myStack = new Stack<>();
+        // Thêm phần tử vào ngăn xếp
+        myStack.push(10);
+        myStack.push(20);
+        myStack.push(30);
+
+        // Loại bỏ phần tử từ ngăn xếp
+        while (!myStack.isEmpty()) {
+            System.out.println(myStack.pop());
+        }
+    }
+}
+            </pre>
+        </div>
+
+        <h3>Thuật toán</h3>
+
+        <h4>Thuật toán sắp xếp</h4>
+        <p>Thuật toán sắp xếp Bubble Sort là một trong những thuật toán sắp xếp đơn giản nhất. Nó hoạt động bằng cách so sánh lần lượt từng cặp phần tử liền kề trong danh sách và hoán đổi chúng nếu chúng không được sắp xếp đúng thứ tự. Thuật toán này tiếp tục lặp lại quá trình này cho đến khi không còn cần phải hoán đổi nữa.</p>
+
+        <div class="code-block">
+            <h5>Demo</h5>
+            <pre>
+public class Main {
+    public static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    // Hoán đổi các phần tử nếu cần thiết
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {64, 34, 25, 12, 22, 11, 90};
+        bubbleSort(arr);
+        System.out.println("Sorted array:");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
+            </pre>
+        </div>
+
+        <h4>Đệ quy</h4>
+        <p>Đệ quy là kỹ thuật mà một phương thức gọi chính nó. Đệ quy là một kỹ thuật trong lập trình, đặc biệt trong lập trình hàm, mà một hàm gọi lại chính nó trong quá trình thực thi.</p>
+
+        <div class="code-block">
+            <h5>Demo</h5>
+            <pre>
+public class Main {
+    public static int factorial(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        int number = 5;
+        int result = factorial(number);
+        System.out.println("Factorial of " + number + " is: " + result);
+    }
+}
+            </pre>
+        </div>
+
+        <h4>Tìm kiếm</h4>
+        <p>Thuật toán tìm kiếm phổ biến nhất là tìm kiếm nhị phân (binary search). Thuật toán này được sử dụng để tìm kiếm một phần tử cụ thể trong một mảng đã được sắp xếp theo thứ tự tăng dần hoặc giảm dần.</p>
+
+        <div class="code-block">
+            <h5>Demo</h5>
+            <pre>
+public class Main {
+    public static int binarySearch(int[] arr, int target) {
+        int left = 0;
+        int right = arr.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] == target) {
+                return mid;
+            }
+            if (arr[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return -1; // Trả về -1 nếu không tìm thấy
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {2, 3, 4, 10, 40};
+        int target = 10;
+        int result = binarySearch(arr, target);
+        if (result == -1) {
+            System.out.println("Element not present in array");
+        } else {
+            System.out.println("Element found at index " + result);
+        }
+    }
+}
+            </pre>
+        </div>
+
+        <h4>Chia để trị</h4>
+        <p>Thuật toán "Chia để Trị" (Divide and Conquer) là một kỹ thuật giải quyết vấn đề bằng cách chia vấn đề thành các vấn đề con nhỏ hơn, giải quyết từng vấn đề con, sau đó kết hợp kết quả lại với nhau.</p>
+
+        <div class="code-block">
+            <h5>Demo</h5>
+            <pre><code>
+public class Main {
+    public static void mergeSort(int[] arr) {
+        if (arr.length < 2) {
+            return;
+        }
+        int mid = arr.length / 2;
+        int[] left = new int[mid];
+        int[] right = new int[arr.length - mid];
+        System.arraycopy(arr, 0, left, 0, mid);
+        System.arraycopy(arr, mid, right, 0, arr.length - mid);
+        mergeSort(left);
+        mergeSort(right);
+        merge(arr, left, right);
+    }
+
+    public static void merge(int[] arr, int[] left, int[] right) {
+        int i = 0, j = 0, k = 0;
+        while (i < left.length && j < right.length) {
+            if (left[i] < right[j]) {
+                arr[k++] = left[i++];
+            } else {
+                arr[k++] = right[j++];
+            }
+        }
+        while (i < left.length) {
+            arr[k++] = left[i++];
+        }
+        while (j < right.length) {
+            arr[k++] = right[j++];
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {38, 27, 43, 3, 9, 82, 10};
+        mergeSort(arr);
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
+</code></pre>
+        </div>
         <h2>2. LinkedList</h2>
         <p>
             <code>LinkedList</code> là danh sách liên kết kép, phù hợp với các thao tác thêm/xóa phần tử ở giữa danh sách.
@@ -170,7 +373,9 @@ public class HashMapExample {
             Việc làm quen với các cấu trúc dữ liệu và thuật toán như Bubble Sort sẽ giúp bạn xây dựng các chương trình Java hiệu quả hơn. Hãy thực hành thường xuyên để nâng cao kỹ năng của mình.
         </p>
     </div>
-
+    </div>
+     <!-- gaasa -->
+       
     <footer>
         <p>&copy; 2024 Học Java | Được phát triển với <a href="#">niềm đam mê</a>.</p>
     </footer>

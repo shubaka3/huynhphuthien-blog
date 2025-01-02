@@ -70,50 +70,93 @@
 </head>
 <body>
     <header>
-        <h1>An Introduction to Modern Web Design</h1>
-        <p class="description">Exploring the art of creating visually stunning and user-friendly websites</p>
+        <h1>Giới thiệu về Thiết Kế Web Hiện Đại</h1>
+        <p class="description">Khám phá nghệ thuật tạo ra các trang web vừa đẹp mắt vừa thân thiện với người dùng</p>
     </header>
 
     <div class="content">
-        <h2>What is Modern Web Design?</h2>
+        <h2>HTML là gì?</h2>
         <p>
-            Modern web design refers to the approach of building websites with aesthetics, functionality, and usability in mind. It embraces the latest trends, techniques, and technologies to deliver seamless experiences.
+            HTML (HyperText Markup Language) là ngôn ngữ đánh dấu được sử dụng để xây dựng cấu trúc và nội dung cho các trang web. HTML hoạt động như bộ khung cơ bản, giúp tổ chức văn bản, hình ảnh, liên kết và các thành phần khác trên trang. Đây là bước đầu tiên không thể thiếu khi tạo ra bất kỳ trang web nào.
+        </p>
+        <p>
+            HTML được phát minh vào năm 1991 bởi Tim Berners-Lee. Từ đó đến nay, nó đã trải qua nhiều cải tiến, hiện đang ở phiên bản HTML5 với nhiều tính năng hỗ trợ đa phương tiện và tương tác tốt hơn. Ví dụ, HTML5 cung cấp các thẻ như <code>&lt;video&gt;</code> và <code>&lt;audio&gt;</code>, cho phép nhúng nội dung đa phương tiện dễ dàng.
+        </p>
+
+        <h2>CSS là gì?</h2>
+        <p>
+            CSS (Cascading Style Sheets) là ngôn ngữ được sử dụng để định kiểu và bố cục cho các trang web. Nếu như HTML là bộ khung, thì CSS chính là "lớp trang điểm" giúp trang web trở nên sinh động và hấp dẫn hơn.
+        </p>
+        <p>
+            CSS cho phép bạn thay đổi màu sắc, kiểu chữ, khoảng cách giữa các phần tử và nhiều yếu tố thiết kế khác. Các tính năng như Grid và Flexbox trong CSS giúp dễ dàng tạo bố cục hiện đại, đáp ứng tốt trên mọi kích thước màn hình.
         </p>
 
         <div class="code-block">
-            <h4>Example Code Block:</h4>
-            <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;Hello World&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;Welcome to Modern Web Design&lt;/h1&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+            <h4>Ví dụ về Mã CSS:</h4>
+            <pre><code>body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #007bff;
+    text-align: center;
+}</code></pre>
         </div>
 
-        <h2>Key Principles</h2>
+        <h2>JavaScript là gì?</h2>
         <p>
-            Modern web design is centered around these principles:
-            <ul>
-                <li><strong>Responsiveness:</strong> Websites must look great on all devices.</li>
-                <li><strong>Performance:</strong> Speed and optimization are critical for user experience.</li>
-                <li><strong>Accessibility:</strong> Websites should be usable by everyone, including people with disabilities.</li>
-            </ul>
+            JavaScript (JS) là ngôn ngữ lập trình được sử dụng để tạo tính năng động và tương tác trên các trang web. JS cho phép bạn xử lý các sự kiện, tương tác với người dùng và thao tác với nội dung trên trang web mà không cần tải lại toàn bộ trang.
+        </p>
+        <p>
+            Với sự hỗ trợ của các thư viện và framework như React, Angular, và Vue, JavaScript đã trở thành công cụ mạnh mẽ cho cả front-end và back-end (Node.js). Nó không chỉ giúp trang web trở nên tương tác mà còn mở ra khả năng xây dựng ứng dụng web đầy đủ tính năng.
         </p>
 
-        <h2>Conclusion</h2>
+        <div class="code-block">
+            <h4>Ví dụ về Mã JavaScript:</h4>
+            <pre><code>document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('button');
+    button.addEventListener('click', () => {
+        alert('Chào mừng bạn đến với JavaScript!');
+    });
+});</code></pre>
+        </div>
+
+        <h2>Thiết Kế Web Hiện Đại Là Gì?</h2>
         <p>
-            By embracing modern design principles, developers can create websites that are not only beautiful but also functional and accessible. The web is an ever-evolving platform, and staying updated with current trends is essential for success.
+            Thiết kế web hiện đại không chỉ tập trung vào việc tạo ra các trang web bắt mắt mà còn chú trọng đến tính năng và trải nghiệm người dùng. Điều này bao gồm việc áp dụng các xu hướng, kỹ thuật và công nghệ mới nhất để mang lại trải nghiệm mượt mà, dễ dàng sử dụng.
+        </p>
+        <p>
+            Một trang web hiện đại cần phải có giao diện hấp dẫn, tốc độ tải nhanh, và thân thiện với mọi thiết bị, từ máy tính để bàn đến điện thoại di động. Ngoài ra, sự dễ dàng trong điều hướng và tương tác là yếu tố quan trọng để giữ chân người dùng.
+        </p>
+
+        <h2>Các Nguyên Tắc Quan Trọng</h2>
+        <p>
+            Thiết kế web hiện đại dựa trên các nguyên tắc sau:
+        </p>
+        <ul>
+            <li><strong>Đáp Ứng (Responsiveness):</strong> Trang web phải hiển thị tốt trên mọi loại thiết bị, từ điện thoại đến máy tính bảng và máy tính để bàn.</li>
+            <li><strong>Hiệu Suất (Performance):</strong> Tốc độ tải nhanh và tối ưu hóa là yếu tố then chốt để cải thiện trải nghiệm người dùng.</li>
+            <li><strong>Khả Năng Truy Cập (Accessibility):</strong> Trang web cần phải thân thiện với tất cả mọi người, bao gồm cả những người có khuyết tật.</li>
+            <li><strong>Tương Tác (Interactivity):</strong> Sử dụng JavaScript và các công nghệ tương tự để tăng tính năng động cho trang web.</li>
+        </ul>
+
+        <h2>Kết Luận</h2>
+        <p>
+            Bằng cách nắm vững HTML, CSS, và JavaScript, cùng với các nguyên tắc thiết kế hiện đại, bạn có thể tạo ra các trang web không chỉ đẹp mắt mà còn đáp ứng tốt các yêu cầu về chức năng và trải nghiệm người dùng. Thế giới web luôn thay đổi, vì vậy việc cập nhật kiến thức và áp dụng những xu hướng mới là điều cần thiết để thành công.
         </p>
     </div>
 
     <footer>
-        <p>&copy; 2024 Modern Web Design | Designed with <a href="#">passion</a>.</p>
+        <p>&copy; 2024 Thiết Kế Web Hiện Đại | Được tạo ra với <a href="#">niềm đam mê</a>.</p>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
+
 </html>

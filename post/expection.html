@@ -16,7 +16,7 @@
         }
 
         header {
-            background: linear-gradient(45deg, #007bff, #6610f2);
+            background: black;
             color: white;
             padding: 40px 20px;
             text-align: center;
@@ -75,13 +75,116 @@
     </header>
 
     <div class="content">
-        <h2>Giới thiệu về Xử lý Ngoại lệ</h2>
-        <p>
-            Trong lập trình Java, ngoại lệ (Exception) là các tình huống xảy ra lỗi trong quá trình chạy chương trình, 
-            như chia cho 0, truy cập mảng ngoài phạm vi hoặc lỗi khi làm việc với tệp. Việc xử lý ngoại lệ giúp đảm bảo 
-            chương trình của bạn không bị dừng đột ngột.
-        </p>
-
+        <img src="https://th.bing.com/th/id/OIP.R2H7D3SG4Q7DqP16znEETAHaDd?rs=1&amp;pid=ImgDetMain" alt="Java | Oracle Apps Info" class=" nofocus" tabindex="0" aria-label="Java | Oracle Apps Info" role="button" data-bm="22">
+        <h2>Ngoại lệ (Exception) là gì?</h2>
+        <p>Exception là một sự kiện xảy ra trong quá trình thực thi một chương trình Java, nó làm phá vỡ cái flow (luồng xử lý) bình thường của một chương trình, thậm chí chết chương trình.</p>
+        <p>Một ngoại lệ có thể xảy ra với nhiều lý do khác nhau:</p>
+        <ul>
+            <li>Người dùng nhập dữ liệu không hợp lệ.</li>
+            <li>Truy cập ngoài chỉ số mảng.</li>
+            <li>Một file cần được mở nhưng không thể tìm thấy.</li>
+            <li>Kết nối mạng bị ngắt trong quá trình thực hiện giao tiếp hoặc JVM hết bộ nhớ.</li>
+        </ul>
+        <p>Ví dụ chương trình chia 2 số. Nếu ta cho mẫu số = 0 thì phát sinh lỗi và đó được coi là một ngoại lệ:</p>
+        <pre><code>public class ExceptionExample1 {
+        public static void main(String[] args) {
+            int zero = 0;
+            int average = 10 / zero;
+            System.out.println("Average = " + average);
+        }
+    }
+        </code></pre>
+        <p>Khi thực thi chương trình trên, sẽ nhận được thông báo lỗi như sau:</p>
+        <pre><code>Exception in thread "main" java.lang.ArithmeticException: / by zero</code></pre>
+    
+        <h2>Hệ thống cấp bậc của các lớp ngoại lệ trong Java</h2>
+        <ul>
+            <li>Class ở mức cao nhất là <strong>Throwable</strong></li>
+            <li>Hai class con trực tiếp là <strong>Error</strong> và <strong>Exception</strong></li>
+            <li>Nhánh <strong>RuntimeException</strong> chứa các ngoại lệ không được kiểm tra tại thời điểm biên dịch.</li>
+        </ul>
+        
+        <h3>Exception</h3>
+        <p>Trong Java có 2 loại exception: <strong>checked</strong> và <strong>unchecked</strong>.</p>
+        <h4>Checked exceptions</h4>
+        <ul>
+            <li>Là loại exception xảy ra trong lúc compile time, buộc phải xử lý.</li>
+            <li>Ví dụ: <code>IOException</code>, <code>FileNotFoundException</code>,...</li>
+        </ul>
+    
+        <h4>Unchecked exceptions</h4>
+        <ul>
+            <li>Là loại exception xảy ra tại runtime, không bắt buộc phải xử lý.</li>
+            <li>Ví dụ: <code>NullPointerException</code>, <code>ArrayIndexOutOfBoundsException</code>,...</li>
+        </ul>
+    
+        <h3>Error</h3>
+        <p>Error là những vấn đề nghiêm trọng liên quan đến môi trường thực thi.</p>
+        <p>Ví dụ: <code>OutOfMemoryError</code>, <code>StackOverflowError</code>,...</p>
+    
+        <h2>Cú pháp xử lý ngoại lệ trong Java</h2>
+        <pre><code>try {
+        // code có thể ném ra ngoại lệ
+    } catch(Exception e) {
+        // code xử lý ngoại lệ
+    } finally {
+        // code trong khối này luôn được thực thi
+    }</code></pre>
+    
+        <h2>Các phương thức của lớp Exception</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Phương thức</th>
+                    <th>Miêu tả</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><code>getMessage()</code></td>
+                    <td>Trả về thông điệp cụ thể của ngoại lệ.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><code>getCause()</code></td>
+                    <td>Trả về nguyên nhân của ngoại lệ.</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><code>toString()</code></td>
+                    <td>Trả về tên lớp và thông điệp ngoại lệ.</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <h2>Ví dụ minh họa</h2>
+        <h3>Ví dụ xử lý ngoại lệ thực hiện phép chia cho số 0</h3>
+        <pre><code>try {
+        int zero = 0;
+        int average = 10 / zero;
+    } catch (ArithmeticException ex) {
+        System.out.println(ex);
+    }</code></pre>
+    
+        <h3>Ví dụ sử dụng khối lệnh try lồng nhau</h3>
+        <pre><code>try {
+        try {
+            int zero = 0;
+            int average = 10 / zero;
+        } catch (ArithmeticException ex) {
+            System.out.println(ex);
+        }
+        int arr[] = new int[5];
+        arr[5] = 4;
+    } catch (ArrayIndexOutOfBoundsException ex) {
+        System.out.println(ex);
+    }</code></pre>
+    
+        <p>...</p>
+        <!-- hiaâs -->
+      
         <h2>Các loại Exception phổ biến</h2>
         <ul>
             <li><strong>ArithmeticException:</strong> Xảy ra khi có lỗi toán học, như chia cho 0.</li>

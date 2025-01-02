@@ -42,7 +42,7 @@
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
     <div class="profile-img">
-      <img src="assets/img/me.jpg" alt="" class="img-fluid rounded-circle">
+      <img src="assets/img/vuong.jpg" alt="" class="img-fluid rounded-circle">
     </div>
 
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
@@ -52,11 +52,11 @@
     </a>
 
     <div class="social-links text-center">
-      <a href="https://www.facebook.com/saito.hiraga.3557440" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.facebook.com/saito.hiraga.3557440" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="https://www.facebook.com/saito.hiraga.3557440" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://www.facebook.com/saito.hiraga.3557440" class="google-plus"><i class="bi bi-skype"></i></a>
-      <a href="https://www.facebook.com/saito.hiraga.3557440" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <a href="https://www.facebook.com/saito.hiraga.3557440/" class="twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.facebook.com/saito.hiraga.3557440/" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.facebook.com/saito.hiraga.3557440/" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.facebook.com/saito.hiraga.3557440/" class="google-plus"><i class="bi bi-skype"></i></a>
+      <a href="https://www.facebook.com/saito.hiraga.3557440/" class="linkedin"><i class="bi bi-linkedin"></i></a>
     </div>
 
     <nav id="navmenu" class="navmenu">
@@ -65,24 +65,7 @@
         <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
         <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
         <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="index.html#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        <li class="dropdown"><a href="#"><i class="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="#">Dropdown 1</a></li>
-            <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Deep Dropdown 1</a></li>
-                <li><a href="#">Deep Dropdown 2</a></li>
-                <li><a href="#">Deep Dropdown 3</a></li>
-                <li><a href="#">Deep Dropdown 4</a></li>
-                <li><a href="#">Deep Dropdown 5</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Dropdown 2</a></li>
-            <li><a href="#">Dropdown 3</a></li>
-            <li><a href="#">Dropdown 4</a></li>
-          </ul>
-        </li>
+        <li><a href="#portfolio"><i class="bi bi-hdd-stack navicon"></i>All Post</a></li>
         <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
@@ -95,19 +78,24 @@
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Portfolio</h2>
-            <p>Explore our latest articles and projects. Click on each item to view more details.</p>
+            <h2>ALL POST</h2>
+            <p>Click button to view full post.</p>
         </div><!-- End Section Title -->
 
         <div class="container">
+            <div id="post-content" class="post-content">
+            
+            </div>
+            <button id="toggleButton22">Xem Post</button>
+
             <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
 
                 <!-- Portfolio Item 1 -->
                 <div class="col-lg-4 col-md-6 portfolio-item">
                     <div class="portfolio-content h-100">
-                        <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 1">
+                        <img src="https://blog.interfell.com/hubfs/HTML%2c%20CSS%20y%20JS%20la%20combinacion%20para%20el%20desarrollo%20web.jpg" class="img-fluid" alt="Article 1">
                         <div class="portfolio-info">
-                            <h4>Article 1</h4>
+                            <h4>Post 1</h4>
                             <p>An introduction to modern web design.</p>
                             <!-- <a href="post/post1.html" class="details-link"><i class="bx bx-link"></i> Read More</a> -->
                             <a href="post/post1.html" class="details-link" data-url="post/post1.html">Read More</a>
@@ -119,12 +107,13 @@
                 <!-- Portfolio Item 2 -->
                 <div class="col-lg-4 col-md-6 portfolio-item">
                     <div class="portfolio-content h-100">
-                        <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 2">
+                        <img src="assets/img/portfolio/javabeginer.png" class="img-fluid" alt="Article 2">
                         <div class="portfolio-info">
-                            <h4>Article 2</h4>
-                            <p>Understanding responsive design principles.</p>
+                            <h4>Post 2</h4>
+                            <p>Java for beginner</p>
                             <!-- <a href="post/javaforbeginer.html" class="details-link"><i class="bx bx-link"></i> Read More</a> -->
                             <a href="post/javaforbeginer.html" class="details-link" data-url="post/javaforbeginer.html">Read More</a>
+
                         </div>
                     </div>
                 </div>
@@ -132,12 +121,14 @@
                 <!-- Portfolio Item 3 -->
                 <div class="col-lg-4 col-md-6 portfolio-item">
                     <div class="portfolio-content h-100">
-                        <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 3">
+                        <!-- <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 3"> -->
+                        <img src="https://i.ytimg.com/vi/cz4mMmaspwI/maxresdefault.jpg" alt="Java OOP - Interfaces &amp; 'implements' Keyword - YouTube" class=" nofocus" tabindex="0" aria-label="Java OOP - Interfaces &amp; 'implements' Keyword - YouTube" role="button" style="position: absolute; height: 100%; width: 100%; inset: 0px; margin: auto;">
                         <div class="portfolio-info">
-                            <h4>Article 3</h4>
-                            <p>Top trends in user interface design.</p>
+                            <h4>Post 3</h4>
+                            <p>Oop in java</p>
                             <!-- <a href="post/oopjava.html" class="details-link"><i class="bx bx-link"></i> Read More</a> -->
                             <a href="post/oopjava.html" class="details-link" data-url="post/oopjava.html">Read More</a>
+
                         </div>
                     </div>
                 </div>
@@ -145,10 +136,11 @@
                 <!-- Portfolio Item 4 -->
                 <div class="col-lg-4 col-md-6 portfolio-item">
                     <div class="portfolio-content h-100">
-                        <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 4">
+                        <!-- <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 4"> -->
+                        <img src="https://i.ytimg.com/vi/VIbZRUjh2d0/maxresdefault.jpg" alt="Java Try Catch - YouTube" class=" nofocus" tabindex="0" aria-label="Java Try Catch - YouTube" role="button" style="position: absolute; height: 100%; width: 100%; inset: 0px; margin: auto;">
                         <div class="portfolio-info">
-                            <h4>Article 4</h4>
-                            <p>Designing for accessibility.</p>
+                            <h4>Post 4</h4>
+                            <p>try catch exception in java</p>
                             <!-- <a href="post/expection.html" class="details-link"><i class="bx bx-link"></i> Read More</a> -->
                             <a href="post/expection.html" class="details-link" data-url="post/expection.html">Read More</a>
 
@@ -159,10 +151,11 @@
                 <!-- Portfolio Item 5 -->
                 <div class="col-lg-4 col-md-6 portfolio-item">
                     <div class="portfolio-content h-100">
-                        <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 5">
+                        <!-- <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 5"> -->
+                        <img src="https://cafedev.vn/wp-content/uploads/2020/07/cafedev_datastruct_alg.jpeg" alt="Cấu trúc dữ liệu và giải thuật là gì? - Tại sao nó lại quan trọng với ..." class=" nofocus" tabindex="0" aria-label="Cấu trúc dữ liệu và giải thuật là gì? - Tại sao nó lại quan trọng với ..." role="button" data-bm="140" style="position: absolute; height: 100%; width: 100%; inset: 0px; margin: auto;">
                         <div class="portfolio-info">
-                            <h4>Article 5</h4>
-                            <p>Exploring color psychology in design.</p>
+                            <h4>Post 5</h4>
+                            <p>data structures and algorithms in java</p>
                             <!-- <a href="post/data.html" class="details-link"><i class="bx bx-link"></i> Read More</a> -->
                             <a href="post/data.html" class="details-link" data-url="post/data.html">Read More</a>
 
@@ -173,12 +166,27 @@
                 <!-- Portfolio Item 6 -->
                 <div class="col-lg-4 col-md-6 portfolio-item">
                     <div class="portfolio-content h-100">
-                        <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 6">
+                        <!-- <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 6"> -->
+                        <img src="https://th.bing.com/th/id/R.3c52c36c123e98a3532f616158739366?rik=O0lS2rAnjcBlrA&amp;riu=http%3a%2f%2fcdn-ak.f.st-hatena.com%2fimages%2ffotolife%2ft%2ftreeapps%2f20160113%2f20160113231034.png&amp;ehk=K9o4Ux2W7ukRyFgl0neY3owRRjGQmAB6HSoEPcu%2bs4M%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" alt="Spring bootでjsonpの先頭に謎の/**/が混入する問題とその対応 - 文系プログラマによるTIPSブログ" class=" nofocus" tabindex="0" aria-label="Spring bootでjsonpの先頭に謎の/**/が混入する問題とその対応 - 文系プログラマによるTIPSブログ" role="button" data-bm="29">
                         <div class="portfolio-info">
-                            <h4>Article 6</h4>
-                            <p>Future of mobile-first design.</p>
+                            <h4>Post 6</h4>
+                            <p>Spring Boot.</p>
                             <!-- <a href="post/springboots.html" class="details-link"><i class="bx bx-link"></i> Read More</a> -->
                             <a href="post/springboots.html" class="details-link" data-url="post/springboots.html">Read More</a>
+
+                        </div>
+                    </div>
+                </div>
+                  <!-- Portfolio Item 6 -->
+                  <div class="col-lg-4 col-md-6 portfolio-item">
+                    <div class="portfolio-content h-100">
+                        <!-- <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 6"> -->
+                        <img src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_1080,q_100,w_1080/v1/gcs/platform-data-dsc/events/spring-boot-1_5zDxm9B.jpg" alt="ARA Softwares - About" class=" nofocus" tabindex="0" aria-label="ARA Softwares - About" role="button" style="position: absolute; height: 100%; width: 100%; inset: 0px; margin: auto;">
+                        <div class="portfolio-info">
+                            <h4>Post 7</h4>
+                            <p>rest api with spring boot.</p>
+                            <!-- <a href="post/springboots.html" class="details-link"><i class="bx bx-link"></i> Read More</a> -->
+                            <a href="post/springmysql.html" class="details-link" data-url="post/springmysql.html">Read More</a>
 
                         </div>
                     </div>
@@ -187,10 +195,11 @@
                 <!-- Portfolio Item 7 -->
                 <div class="col-lg-4 col-md-6 portfolio-item">
                     <div class="portfolio-content h-100">
-                        <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 7">
+                        <!-- <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 7"> -->
+                        <img src="https://th.bing.com/th/id/OIP.kvFd_hajD7UybAOdpvvJ6AHaEL?rs=1&amp;pid=ImgDetMain" alt="How to work with Files in Java. In this article, I want to discuss in ..." class=" nofocus" tabindex="0" aria-label="How to work with Files in Java. In this article, I want to discuss in ..." role="button" data-bm="29">
                         <div class="portfolio-info">
-                            <h4>Article 7</h4>
-                            <p>Minimalist design: less is more.</p>
+                            <h4>Post 8</h4>
+                            <p>Working with file in java</p>
                             <!-- <a href="post/file.html" class="details-link"><i class="bx bx-link"></i> Read More</a> -->
                             <a href="post/file.html" class="details-link" data-url="post/file.html">Read More</a>
 
@@ -201,12 +210,13 @@
                 <!-- Portfolio Item 8 -->
                 <div class="col-lg-4 col-md-6 portfolio-item">
                     <div class="portfolio-content h-100">
-                        <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 8">
+                        <!-- <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 8"> -->
+                        <img src="https://th.bing.com/th/id/OIP.V2d2FaSVoH2Qb3epmUSnVQHaEG?rs=1&amp;pid=ImgDetMain" alt="JAVA Stream API with examples- Part 1 - Analytics Vidhya - Medium" class=" nofocus" tabindex="0" aria-label="JAVA Stream API with examples- Part 1 - Analytics Vidhya - Medium" role="button" data-bm="29">
                         <div class="portfolio-info">
-                            <h4>Article 8</h4>
-                            <p>Building user-friendly forms.</p>
+                            <h4>Post 9</h4>
+                            <p>Stream api in java</p>
                             <!-- <a href="post/stream.html" class="details-link"><i class="bx bx-link"></i> Read More</a> -->
-                            <a href="post/file.html" class="details-link" data-url="post/file.html">Read More</a>
+                            <a href="post/stream.html" class="details-link" data-url="post/stream.html">Read More</a>
 
                         </div>
                     </div>
@@ -215,10 +225,11 @@
                 <!-- Portfolio Item 9 -->
                 <div class="col-lg-4 col-md-6 portfolio-item">
                     <div class="portfolio-content h-100">
-                        <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 9">
+                        <!-- <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 9"> -->
+                        <img src="https://i.ytimg.com/vi/Kon1DGwbtzg/maxresdefault.jpg" alt="🐞 Learn How To Debug Java Application In Realtime | Effective Debugging ..." class=" nofocus" tabindex="0" aria-label="🐞 Learn How To Debug Java Application In Realtime | Effective Debugging ..." role="button" data-bm="23" style="position: absolute; height: 100%; width: 100%; inset: 0px; margin: auto;">
                         <div class="portfolio-info">
-                            <h4>Article 9</h4>
-                            <p>Improving website performance.</p>
+                            <h4>Post 10</h4>
+                            <p>How to debug code in java </p>
                             <!-- <a href="post/debug.html" class="details-link"><i class="bx bx-link"></i> Read More</a> -->
                             <a href="post/debug.html" class="details-link" data-url="post/debug.html">Read More</a>
 
@@ -229,10 +240,11 @@
                 <!-- Portfolio Item 10 -->
                 <div class="col-lg-4 col-md-6 portfolio-item">
                     <div class="portfolio-content h-100">
-                        <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 10">
+                        <!-- <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 10"> -->
+                        <img src="https://th.bing.com/th/id/OIP.6i-B2pIBj82EJU7Xx5Id1AHaHa?rs=1&amp;pid=ImgDetMain" alt="[ENGLISH BELOW] [𝗦𝘁𝘂𝗱𝘆 𝗝𝗮𝗺: 𝗜𝗡𝗧𝗢 𝗝𝗔𝗩𝗔] 🤔 Java Lovers, đã bao giờ bạn tự ..." class=" nofocus" tabindex="0" aria-label="[ENGLISH BELOW] [𝗦𝘁𝘂𝗱𝘆 𝗝𝗮𝗺: 𝗜𝗡𝗧𝗢 𝗝𝗔𝗩𝗔] 🤔 Java Lovers, đã bao giờ bạn tự ..." role="button">
                         <div class="portfolio-info">
-                            <h4>Article 10</h4>
-                            <p>Using animations effectively.</p>
+                            <h4>Post 11</h4>
+                            <p>How to Optimize Java Application Performance</p>
                             <!-- <a href="post/fast.html" class="details-link"><i class="bx bx-link"></i> Read More</a> -->
                             <a href="post/fast.html" class="details-link" data-url="post/fast.html">Read More</a>
 
@@ -242,10 +254,11 @@
                    <!-- Portfolio Item 10 -->
                 <div class="col-lg-4 col-md-6 portfolio-item">
                     <div class="portfolio-content h-100">
-                        <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 10">
+                        <!-- <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 10"> -->
+                        <img src="https://th.bing.com/th/id/OIP.OQZP0EbQ-9u_QaIh2duPhAHaEc?rs=1&amp;pid=ImgDetMain" alt="Interview: Definition, Meaning, Types of Interview" class=" nofocus" tabindex="0" aria-label="Interview: Definition, Meaning, Types of Interview" role="button" data-bm="29">
                         <div class="portfolio-info">
-                            <h4>Article 10</h4>
-                            <p>Using animations effectively.</p>
+                            <h4>Post 12</h4>
+                            <p>Interview Tips</p>
                             <!-- <a href="post/interview.html" class="details-link"><i class="bx bx-link"></i> Read More</a> -->
                             <a href="post/interview.html" class="details-link" data-url="post/interview.html">Read More</a>
 
@@ -255,10 +268,11 @@
                    <!-- Portfolio Item 10 -->
                    <div class="col-lg-4 col-md-6 portfolio-item">
                     <div class="portfolio-content h-100">
-                        <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 10">
+                        <!-- <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 10"> -->
+                        <img src="https://assets-global.website-files.com/606a802fcaa89bc357508cad/61143444834cd54b9b0a88b3_2.png" alt="6 Tips And Tools To Optimize Javascript Code &amp; Boost Site Performance ..." class=" nofocus" tabindex="0" aria-label="6 Tips And Tools To Optimize Javascript Code &amp; Boost Site Performance ..." role="button" data-bm="23" style="position: absolute; height: 100%; width: 100%; inset: 0px; margin: auto;">
                         <div class="portfolio-info">
-                            <h4>Article 10</h4>
-                            <p>Using animations effectively.</p>
+                            <h4>Post 13</h4>
+                            <p>JavaScript for beginner.</p>
                             <!-- <a href="post/jsbeginer.html" class="details-link"><i class="bx bx-link"></i> Read More</a> -->
                             <a href="post/jsbeginer.html" class="details-link" data-url="post/jsbeginer.html">Read More</a>
 
@@ -267,10 +281,11 @@
                 </div>
                 <div class="col-lg-4 col-md-6 portfolio-item">
                     <div class="portfolio-content h-100">
-                        <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 10">
+                        <!-- <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Article 10"> -->
+                        <img src="https://th.bing.com/th/id/OIP.Pempa34ntwTSeRFzpzYVuwHaEK?rs=1&amp;pid=ImgDetMain" alt="How to Manipulate the DOM in JavaScript – Most Commonly Used Techniques" class=" nofocus" tabindex="0" aria-label="How to Manipulate the DOM in JavaScript – Most Commonly Used Techniques" role="button" data-bm="22">
                         <div class="portfolio-info">
-                            <h4>Article 10</h4>
-                            <p>Using animations effectively.</p>
+                            <h4>Post 14</h4>
+                            <p>DOM Manipulation:</p>
                             <!-- <a href="post/doom.html" class="details-link"><i class="bx bx-link"></i> Read More</a> -->
                             <a href="post/doom.html" class="details-link" data-url="post/doom.html">Read More</a>
 
@@ -280,9 +295,63 @@
 
             </div>
         </div>
-        <div id="post-content" class="post-content">
-            <!-- Nội dung bài viết sẽ được tải vào đây -->
+        <!-- <div id="post-content" class="post-content">
+            
         </div>
+        <button id="toggleButton">Thu gọn bài viết</button> -->
+        <style>
+            /* Đặt chiều cao giới hạn cho phần nội dung khi thu gọn */
+            #toggleButton22 {
+    background-color: #4CAF50; /* Màu nền nổi bật (màu xanh lá) */
+    color: white; /* Màu chữ trắng */
+    border: none; /* Không viền */
+    /* border-radius: 50%; Để nút có hình tròn */
+    border:#000000 3px solid;
+    width: 100px; /* Đặt chiều rộng của nút */
+    height: 100px; /* Đặt chiều cao của nút */
+    font-size: 24px; /* Cỡ chữ trong nút */
+    display: flex; /* Dùng flex để căn giữa nội dung */
+    justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+    cursor: pointer; /* Khi hover, con trỏ chuột sẽ thay đổi */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s ease-in-out; /* Thêm hiệu ứng khi hover */
+    position: fixed; /* Đặt nút cố định ở vị trí */
+    bottom: 20px; /* Đặt khoảng cách từ dưới lên */
+    right: 20px; /* Đặt khoảng cách từ phải sang */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ cho nút */
+}
+
+#toggleButton22:hover {
+    background-color: #388E3C; /* Màu nền khi hover */
+    transform: scale(1.2); /* Tăng kích thước của nút khi hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Tăng độ bóng khi hover */
+}
+
+#toggleButton22:focus {
+    outline: none; /* Xóa viền khi nút được nhấn */
+}
+
+.post-content {
+    max-height: 200px; /* Chiều cao khi thu gọn */
+    overflow: hidden; /* Ẩn phần nội dung vượt quá chiều cao */
+    transition: max-height 0.3s ease-in-out; /* Thêm hiệu ứng chuyển động */
+}
+
+/* Thêm lớp mở rộng cho nội dung */
+.post-content.expanded {
+    max-height: none; /* Không giới hạn chiều cao khi mở rộng */
+}
+
+#toggleButton22Container {
+    position: fixed;
+    top: 50%; /* Đặt nút vào giữa trang theo chiều dọc */
+    left: 50%; /* Đặt nút vào giữa trang theo chiều ngang */
+    transform: translate(-50%, -50%); /* Căn chỉnh chính xác vào trung tâm */
+    z-index: 9999; /* Đảm bảo nút luôn nằm trên cùng */
+}
+
+
+        </style>
     </section>
     
 
@@ -349,6 +418,20 @@ $(document).ready(function() {
         });
     });
 });
+document.getElementById("toggleButton22").addEventListener("click", function() {
+    var postContent = document.getElementById("post-content");
+
+    // Nếu phần nội dung đang thu gọn, mở rộng nó
+    if (postContent.classList.contains("expanded")) {
+        postContent.classList.remove("expanded");
+        this.textContent = "Thu gọn";
+    } else {
+        // Nếu phần nội dung đang mở rộng, thu gọn lại
+        postContent.classList.add("expanded");
+        this.textContent = "Xem thêm";
+    }
+});
+
 </script>
 
 
