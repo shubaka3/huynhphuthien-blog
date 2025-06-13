@@ -180,7 +180,7 @@
       }
 
       try {
-        const res = await fetch("http://localhost:5678/webhook/22ef7773-f885-4602-a20e-f3d9be96d735", {
+        const res = await fetch("/api/proxy-n8n", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ chatInput: msg })
