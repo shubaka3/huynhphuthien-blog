@@ -151,7 +151,7 @@
 
     async function isServerOnline() {
       try {
-        const res = await fetch("http://localhost:5678/webhook/22ef7773-f885-4602-a20e-f3d9be96d735", {
+        const res = await fetch("http://192.168.1.143:5678/webhook/22ef7773-f885-4602-a20e-f3d9be96d735", {
           method: "POST"
         });
         const data = await res.json();
